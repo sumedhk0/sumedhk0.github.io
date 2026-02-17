@@ -61,49 +61,55 @@ export function Projects() {
                 transition={{ duration: 0.3 }}
               >
                 <TiltCard>
-                  <div className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
-                    <div className="mb-3 flex items-start justify-between">
-                      <h3 className="font-semibold">{project.title}</h3>
-                      <div className="flex gap-2">
-                        {project.github && (
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground transition-colors hover:text-foreground"
-                            aria-label={`${project.title} GitHub`}
-                          >
-                            <Github className="h-4 w-4" />
-                          </a>
-                        )}
-                        {project.live && (
-                          <a
-                            href={project.live}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground transition-colors hover:text-foreground"
-                            aria-label={`${project.title} live demo`}
-                          >
-                            <ExternalLink className="h-4 w-4" />
-                          </a>
-                        )}
+                  {(() => {
+                    const href = project.live ?? (project.github && project.github !== "#" ? project.github : undefined);
+                    const card = (
+                      <div className={`group rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md ${href ? "border-border hover:border-blue-500 cursor-pointer" : "border-border"}`}>
+                        <div className="mb-3 flex items-start justify-between">
+                          <h3 className="font-semibold">{project.title}</h3>
+                          <div className="flex gap-2">
+                            {project.github && project.github !== "#" && (
+                              <span
+                                onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(project.github, "_blank", "noopener,noreferrer"); }}
+                                className="text-muted-foreground transition-colors hover:text-foreground"
+                                aria-label={`${project.title} GitHub`}
+                              >
+                                <Github className="h-4 w-4" />
+                              </span>
+                            )}
+                            {project.live && (
+                              <span
+                                onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(project.live, "_blank", "noopener,noreferrer"); }}
+                                className="text-muted-foreground transition-colors hover:text-foreground"
+                                aria-label={`${project.title} live demo`}
+                              >
+                                <ExternalLink className="h-4 w-4" />
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                          {project.description}
+                        </p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {project.tech.map((t) => (
+                            <Badge
+                              key={t}
+                              variant="secondary"
+                              className="font-[family-name:var(--font-geist-mono)] text-[10px]"
+                            >
+                              {t}
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                    <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {project.tech.map((t) => (
-                        <Badge
-                          key={t}
-                          variant="secondary"
-                          className="font-[family-name:var(--font-geist-mono)] text-[10px]"
-                        >
-                          {t}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
+                    );
+                    return href ? (
+                      <a href={href} target="_blank" rel="noopener noreferrer" className="block no-underline text-inherit">
+                        {card}
+                      </a>
+                    ) : card;
+                  })()}
                 </TiltCard>
               </motion.div>
             ))}

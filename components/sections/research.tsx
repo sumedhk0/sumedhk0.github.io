@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import { research } from "@/data/research";
 import { SectionReveal } from "@/components/motion/section-reveal";
 import { TiltCard } from "@/components/motion/tilt-card";
@@ -32,50 +32,67 @@ export function Research() {
           {research.map((item, i) => (
             <SectionReveal key={item.id} delay={i * 0.05}>
               <TiltCard>
-                <div className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md h-full">
-                  <div className="mb-3 flex items-start justify-between">
-                    <div>
-                      <h3 className="font-semibold">{item.title}</h3>
-                      <p className="text-xs text-muted-foreground">
-                        {item.organization}
+                {(() => {
+                  const href = item.link ?? item.github ?? undefined;
+                  const card = (
+                    <div className={`group rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md h-full ${href ? "border-border hover:border-blue-500 cursor-pointer" : "border-border"}`}>
+                      <div className="mb-3 flex items-start justify-between">
+                        <div>
+                          <h3 className="font-semibold">{item.title}</h3>
+                          <p className="text-xs text-muted-foreground">
+                            {item.organization}
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span
+                            className={`rounded-full px-2.5 py-0.5 text-[10px] font-medium ${statusColors[item.status]}`}
+                          >
+                            {item.status}
+                          </span>
+                          {item.github && (
+                            <span
+                              onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(item.github, "_blank", "noopener,noreferrer"); }}
+                              className="text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
+                              aria-label={`${item.title} GitHub`}
+                            >
+                              <Github className="h-4 w-4" />
+                            </span>
+                          )}
+                          {item.link && (
+                            <span
+                              onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(item.link, "_blank", "noopener,noreferrer"); }}
+                              className="text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
+                              aria-label={`${item.title} link`}
+                            >
+                              <ExternalLink className="h-4 w-4" />
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                        {item.description}
                       </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span
-                        className={`rounded-full px-2.5 py-0.5 text-[10px] font-medium ${statusColors[item.status]}`}
-                      >
-                        {item.status}
-                      </span>
-                      {item.link && (
-                        <a
-                          href={item.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground transition-colors hover:text-foreground"
-                          aria-label={`${item.title} link`}
-                        >
-                          <ExternalLink className="h-4 w-4" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
 
-                  <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                    {item.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-1.5">
-                    {item.methods.map((method) => (
-                      <Badge
-                        key={method}
-                        variant="secondary"
-                        className="font-[family-name:var(--font-geist-mono)] text-[10px]"
-                      >
-                        {method}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {item.methods.map((method) => (
+                          <Badge
+                            key={method}
+                            variant="secondary"
+                            className="font-[family-name:var(--font-geist-mono)] text-[10px]"
+                          >
+                            {method}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                  return href ? (
+                    <a href={href} target="_blank" rel="noopener noreferrer" className="block no-underline text-inherit h-full">
+                      {card}
+                    </a>
+                  ) : card;
+                })()}
               </TiltCard>
             </SectionReveal>
           ))}

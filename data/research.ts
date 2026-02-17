@@ -36,6 +36,7 @@ export const research: Research[] = [
       "Directed 20-person UCLA team to architect a fuzzy logic-driven Sustainability Interval Index calculator with scalable data integration pipelines. Developed and deployed GreenGrade (Flutter/C++), automating sustainability analytics for 175 mining firms through Gemini API.",
     methods: ["Flutter", "C++", "Gemini API", "Fuzzy Logic", "Data Pipelines"],
     status: "Completed",
+    github: "https://github.com/KOL305/GreenGradeV2",
   },
   {
     id: "eutrophication-modeling",

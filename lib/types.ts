@@ -24,6 +24,7 @@ export interface Research {
   methods: string[];
   status: "Published" | "In Progress" | "Submitted" | "Completed";
   link?: string;
+  github?: string;
 }
 
 export interface SkillCategory {

@@ -8,7 +8,7 @@ export const projects: Project[] = [
       "Designed and CAD-modeled a fully autonomous debris-clearing robot in SolidWorks. Developed a YOLO-based CV model in PyTorch achieving 95% debris detection accuracy. Integrated perception, navigation, and actuation systems for end-to-end autonomous operation.",
     tech: ["Python", "PyTorch", "YOLO", "SolidWorks", "Embedded Systems"],
     category: "Hardware",
-    github: "#",
+    github: "https://github.com/wschotte/buzzinga-robotech-2026",
   },
   {
     id: "ai-applier",
