@@ -72,15 +72,7 @@ export function Hero({ onResumeOpen }: { onResumeOpen: () => void }) {
           Engineer building intelligent systems across software and hardware.
         </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.25 }}
-          className="mx-auto mb-10 max-w-lg text-sm text-muted-foreground/80"
-        >
-          Working at the intersection of AI, robotics, and environmental
-          systems. Turning complex problems into engineered solutions.
-        </motion.p>
+        
 
         <motion.div
           initial={{ opacity: 0 }}
