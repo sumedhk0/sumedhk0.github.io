@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "WebSearch",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npm init:*)",
+      "Bash(node -e \"const p=require\\(''./package.json''\\); p.name=''personal-website''; require\\(''fs''\\).writeFileSync\\(''package.json'', JSON.stringify\\(p, null, 2\\)\\)\")",
+      "Bash(npm install:*)",
+      "Bash(npx shadcn@latest init -d --base-color zinc --css-variables true)",
+      "Bash(npx shadcn@latest init:*)",
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(npm run build:*)",
+      "Bash(vercel --version:*)",
+      "Bash(gh:*)",
+      "Bash(git --version:*)",
+      "Bash(vercel:*)"
+    ]
+  }
+}
