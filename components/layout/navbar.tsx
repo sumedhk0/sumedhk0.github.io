@@ -6,7 +6,6 @@ import { Menu, X, Command } from "lucide-react";
 import { navItems } from "@/data/navigation";
 import { useSectionInView } from "@/hooks/use-section-in-view";
 import { ThemeToggle } from "@/components/theme-toggle";
-import Link from "next/link";
 
 export function Navbar({ onCommandOpen }: { onCommandOpen: () => void }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -27,12 +26,12 @@ export function Navbar({ onCommandOpen }: { onCommandOpen: () => void }) {
       className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl"
     >
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-        <Link
+        <a
           href="/"
           className="font-[family-name:var(--font-geist-mono)] text-sm font-semibold tracking-tight"
         >
           sk.
-        </Link>
+        </a>
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-1 md:flex">
@@ -40,12 +39,9 @@ export function Navbar({ onCommandOpen }: { onCommandOpen: () => void }) {
             const isActive =
               item.href.startsWith("#") &&
               activeSection === item.href.slice(1);
-            const isExternal = item.external;
-
-            const Comp = isExternal ? Link : "a";
 
             return (
-              <Comp
+              <a
                 key={item.label}
                 href={item.href}
                 className="relative px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -58,7 +54,7 @@ export function Navbar({ onCommandOpen }: { onCommandOpen: () => void }) {
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
-              </Comp>
+              </a>
             );
           })}
 
@@ -102,19 +98,16 @@ export function Navbar({ onCommandOpen }: { onCommandOpen: () => void }) {
             className="overflow-hidden border-t border-border/40 md:hidden"
           >
             <div className="flex flex-col gap-1 bg-background/95 px-6 py-4 backdrop-blur-xl">
-              {navItems.map((item) => {
-                const Comp = item.external ? Link : "a";
-                return (
-                  <Comp
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                  >
-                    {item.label}
-                  </Comp>
-                );
-              })}
+              {navItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                >
+                  {item.label}
+                </a>
+              ))}
             </div>
           </motion.div>
         )}

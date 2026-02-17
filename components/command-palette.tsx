@@ -42,7 +42,7 @@ const items = [
   { label: "About", href: "/#about" },
   { label: "Experience", href: "/#experience" },
   { label: "Projects", href: "/#projects" },
-  { label: "Research", href: "/research" },
+  { label: "Research", href: "/#research" },
   { label: "Resume", href: "__resume__" },
   { label: "Contact", href: "/#contact" },
   { label: "GitHub", href: "https://github.com/sumedhk0" },

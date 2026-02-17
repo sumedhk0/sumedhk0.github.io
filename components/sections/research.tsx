@@ -13,59 +13,74 @@ const statusColors: Record<string, string> = {
   Completed: "bg-muted text-muted-foreground",
 };
 
-export function ResearchSection() {
+export function Research() {
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
-      {research.map((item, i) => (
-        <SectionReveal key={item.id} delay={i * 0.08}>
-          <TiltCard>
-            <div className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md h-full">
-              <div className="mb-3 flex items-start justify-between">
-                <div>
-                  <h3 className="font-semibold">{item.title}</h3>
-                  <p className="text-xs text-muted-foreground">
-                    {item.organization}
-                  </p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span
-                    className={`rounded-full px-2.5 py-0.5 text-[10px] font-medium ${statusColors[item.status]}`}
-                  >
-                    {item.status}
-                  </span>
-                  {item.link && (
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground transition-colors hover:text-foreground"
-                      aria-label={`${item.title} link`}
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                  )}
-                </div>
-              </div>
-
-              <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                {item.description}
-              </p>
-
-              <div className="flex flex-wrap gap-1.5">
-                {item.methods.map((method) => (
-                  <Badge
-                    key={method}
-                    variant="secondary"
-                    className="font-[family-name:var(--font-geist-mono)] text-[10px]"
-                  >
-                    {method}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          </TiltCard>
+    <section id="research" className="py-24">
+      <div className="mx-auto max-w-5xl px-6">
+        <SectionReveal>
+          <p className="mb-2 font-[family-name:var(--font-geist-mono)] text-sm text-muted-foreground">
+            04
+          </p>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight">Research</h2>
+          <p className="mb-12 max-w-xl text-muted-foreground">
+            Active and completed research spanning environmental systems,
+            materials science, and computational modeling.
+          </p>
         </SectionReveal>
-      ))}
-    </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {research.map((item, i) => (
+            <SectionReveal key={item.id} delay={i * 0.05}>
+              <TiltCard>
+                <div className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md h-full">
+                  <div className="mb-3 flex items-start justify-between">
+                    <div>
+                      <h3 className="font-semibold">{item.title}</h3>
+                      <p className="text-xs text-muted-foreground">
+                        {item.organization}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span
+                        className={`rounded-full px-2.5 py-0.5 text-[10px] font-medium ${statusColors[item.status]}`}
+                      >
+                        {item.status}
+                      </span>
+                      {item.link && (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground transition-colors hover:text-foreground"
+                          aria-label={`${item.title} link`}
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {item.methods.map((method) => (
+                      <Badge
+                        key={method}
+                        variant="secondary"
+                        className="font-[family-name:var(--font-geist-mono)] text-[10px]"
+                      >
+                        {method}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </TiltCard>
+            </SectionReveal>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
