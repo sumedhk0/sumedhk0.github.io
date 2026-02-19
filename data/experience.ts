@@ -8,7 +8,7 @@ export const experiences: Experience[] = [
     period: "August 2025 — Present",
     description: [
       "Applied Bayesian statistical modeling using Python and NumPy/Pandas to optimize lignin valorization reaction conditions",
-      "Utilized NMR, FTIR, and DFT modeling data to characterize value-added chemicals from lignin breakdown",
+      "Utilized NMR, SEM, and HPLC modeling data to characterize value-added chemicals from lignin breakdown",
       "Completed literature reviews on aromatic compound synthesis, 3D printing custom GO structures, and optimal catalyst design while collaborating on manuscript for publication",
     ],
   },
