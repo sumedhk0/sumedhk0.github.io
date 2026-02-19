@@ -51,7 +51,7 @@ export function Hero({ onResumeOpen }: { onResumeOpen: () => void }) {
           transition={{ duration: 0.4, delay: 0.1 }}
           className="mb-4 font-[family-name:var(--font-geist-mono)] text-sm text-muted-foreground"
         >
-          Georgia Tech &middot; Computer Science &amp; Chemical &amp; Biomolecular Engineering &middot; 2028
+          Georgia Tech &middot; Computer Science, Chemical &amp; Biomolecular Engineering &middot; 2028
         </motion.p>
 
         <motion.h1
