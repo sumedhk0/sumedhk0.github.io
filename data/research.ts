@@ -6,7 +6,7 @@ export const research: Research[] = [
     title: "Bayesian Optimization for Lignin Valorization",
     organization: "Georgia Tech Renewable Bioproducts Institute — Tong Laboratory",
     description:
-      "Applied Bayesian statistical modeling to optimize lignin valorization reaction conditions. Integrated NMR, FTIR, and DFT computational modeling for structural characterization of value-added chemicals from lignin breakdown. Collaborating on manuscript for peer-reviewed publication.",
+      "Applied Bayesian statistical modeling to optimize lignin valorization reaction conditions. Integrated NMR, SEM, and HPLC modeling data for structural characterization of value-added chemicals from lignin breakdown. Collaborating on manuscript for peer-reviewed publication.",
     methods: ["Bayesian Modeling", "NMR", "SEM", "HPLC", "Python", "NumPy", "Pandas"],
     status: "In Progress",
   },

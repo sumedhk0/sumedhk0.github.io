@@ -11,7 +11,7 @@ export const skills: SkillCategory[] = [
   },
   {
     name: "Data & Research",
-    skills: ["NumPy", "Pandas", "SciPy", "MATLAB", "Bayesian Modeling", "DFT", "NMR", "FTIR"],
+    skills: ["NumPy", "Pandas", "SciPy", "MATLAB", "Bayesian Modeling", "SEM", "NMR", "HPLC"],
   },
   {
     name: "Tools",
