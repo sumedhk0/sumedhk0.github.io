@@ -8,7 +8,7 @@ import { SectionReveal } from "@/components/motion/section-reveal";
 import { TiltCard } from "@/components/motion/tilt-card";
 import { Badge } from "@/components/ui/badge";
 
-const categories = ["All", "Software", "Hardware", "Research"] as const;
+const categories = ["All", "Software", "Hardware"] as const;
 
 export function Projects() {
   const [filter, setFilter] = useState<string>("All");
