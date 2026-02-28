@@ -7,7 +7,7 @@ export const skills: SkillCategory[] = [
   },
   {
     name: "Frameworks",
-    skills: ["Flask", "FastAPI", "Node.js", "PyTorch", "Selenium", "Flutter"],
+    skills: ["Flask", "FastAPI","PyTorch", "Selenium", "Flutter"],
   },
   {
     name: "Data & Research",
@@ -15,6 +15,6 @@ export const skills: SkillCategory[] = [
   },
   {
     name: "Tools",
-    skills: ["SolidWorks", "AutoCAD", "Docker", "SQLite", "Redis", "Excel"],
+    skills: ["SolidWorks", "Docker", "SQLite", "Redis", "Excel"],
   },
 ];
