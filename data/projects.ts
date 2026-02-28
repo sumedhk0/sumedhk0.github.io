@@ -35,7 +35,7 @@ export const projects: Project[] = [
     title: "EcoFlow",
     description:
       "Full cradle-to-grave life cycle analyzer for Amazon products. Includes Sankey diagram visualization and scalable backend architecture.",
-    tech: ["Python", "FastAPI", "SQLite", "Upstash Redis", "Node.js"],
+    tech: ["Python", "FastAPI", "SQLite", "Upstash Redis", "Next.js"],
     category: "Software",
     github: "https://github.com/sumedhk0/EcoFlow",
     live: "https://eco-flow-rose.vercel.app/",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     title: "GitHub Analyzer",
     description:
       "Analyzes user commit history for code quality, consistency, and hireability metrics.",
-    tech: ["Python", "Node.js"],
+    tech: ["Python", "Next.js"],
     category: "Software",
     github: "https://github.com/sumedhk0/github_analyzer",
     live: "https://github-analyzer-navy.vercel.app/",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     title: "ResumeForge",
     description:
       "AI-assisted resume tailoring system that adapts resumes to specific job descriptions using parsing and structured transformation.",
-    tech: ["Python", "Node.js"],
+    tech: ["Python", "Next.js"],
     category: "Software",
     github: "https://github.com/sumedhk0/ResumeForge",
     live: "https://huggingface.co/spaces/sk31415/resume-forge",
