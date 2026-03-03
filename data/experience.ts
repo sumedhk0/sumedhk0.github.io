@@ -13,6 +13,16 @@ export const experiences: Experience[] = [
     ],
   },
   {
+    id: "gt-hytech",
+    role: "Embedded Systems Engineer",
+    organization: "HyTech Racing — Georgia Tech",
+    period: "February 2026 — Present",
+    description: [
+      "Designed and implemented a real-time lap tracking module in modern C++ for Georgia Tech’s Formula SAE Racing team, leveraging Protocol Buffers (Protobuf) for low-latency telemetry serialization and deterministic inter-process communication across vehicle subsystems",
+      "Developing and deploying a YOLO-based object detection pipeline for driverless perception, enabling real-time cone detection and localization through C++ inference integration into the autonomous control stack",
+    ]
+  },
+  {
     id: "cheme-cube",
     role: "Team Lead — Mechanical",
     organization: "ChemE Cube — Georgia Tech",
