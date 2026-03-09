@@ -2,6 +2,16 @@ import { Project } from "@/lib/types";
 
 export const projects: Project[] = [
   {
+    id: "techhackvalley-hackathon",
+    title: "GameSense - Winners - TechHack Valley 2026 Hackathon - Hardware Track",
+    description:
+      "Developed GameSense, a real-time accessibility interface for deaf / hard-of-hearing gamers that converts spatial game audio → multi-channel haptic feedback, enabling directional sound perception through vibration. Engineered a full wearable hardware stack in 36 hrs: CAD-modeled, 3D printed a custom headband + electronics enclosure (Fusion), integrated ESP32 microcontroller, 9-axis IMU, and 8-motor vibration array, and wrote C++ firmware for real-time sensor acquisition, motor PWM control, and UART serial communication with the host audio-processing pipeline. Developed real-time signal processing and control algorithms: implemented multi-channel audio detection and amplitude → haptic intensity mapping, programmed head-tilt → WASD movement using a Kalman filter to stabilize motion input and reduce sensor noise.",
+    tech: ["Python", "C++", "Embedded Systems", "Fusion", "WASAPI"],
+    category: "Hardware",
+    github: "https://github.com/sumedhk0/Game-Sense-TechHackValley",
+    live: "https://devpost.com/software/gamesense-78fswv",
+  },
+  {
     id: "robotech-hackathon",
     title: "IEEE Robotech 2026 Hackathon — Autonomous Track",
     description:
@@ -9,6 +19,7 @@ export const projects: Project[] = [
     tech: ["Python", "PyTorch", "YOLO", "SolidWorks", "Embedded Systems"],
     category: "Hardware",
     github: "https://github.com/wschotte/buzzinga-robotech-2026",
+    live: "https://devpost.com/software/buzzinga-robotech-submission",
   },
   {
     id: "ai-applier",

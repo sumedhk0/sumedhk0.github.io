@@ -15,6 +15,6 @@ export const skills: SkillCategory[] = [
   },
   {
     name: "Tools",
-    skills: ["SolidWorks", "Docker", "SQLite", "Redis", "Excel"],
+    skills: ["Docker", "SQLite", "Redis", "SolidWorks", "Fusion", "Excel"],
   },
 ];
