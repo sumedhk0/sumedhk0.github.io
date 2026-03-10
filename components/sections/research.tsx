@@ -35,7 +35,7 @@ export function Research() {
                 {(() => {
                   const href = item.link ?? item.github ?? undefined;
                   const card = (
-                    <div className={`group rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md h-full ${href ? "border-border hover:border-blue-500 cursor-pointer" : "border-border"}`}>
+                    <div className={`group rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md h-full ${href ? "border-border hover:bg-accent cursor-pointer" : "border-border"}`}>
                       <div className="mb-3 flex items-start justify-between">
                         <div>
                           <h3 className="font-semibold">{item.title}</h3>

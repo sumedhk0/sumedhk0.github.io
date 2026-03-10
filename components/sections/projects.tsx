@@ -64,7 +64,7 @@ export function Projects() {
                   {(() => {
                     const href = project.live ?? (project.github && project.github !== "#" ? project.github : undefined);
                     const card = (
-                      <div className={`group rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md ${href ? "border-border hover:border-blue-500 cursor-pointer" : "border-border"}`}>
+                      <div className={`group rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md ${href ? "border-border hover:bg-accent cursor-pointer" : "border-border"}`}>
                         <div className="mb-3 flex items-start justify-between">
                           <h3 className="font-semibold">{project.title}</h3>
                           <div className="flex gap-2">
