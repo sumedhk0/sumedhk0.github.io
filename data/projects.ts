@@ -5,7 +5,7 @@ export const projects: Project[] = [
     id: "techhackvalley-hackathon",
     title: "GameSense - Winners - TechHack Valley 2026 Hackathon - Hardware Track",
     description:
-      "Developed GameSense, a real-time accessibility interface for deaf / hard-of-hearing gamers that converts spatial game audio → multi-channel haptic feedback, enabling directional sound perception through vibration. Engineered a full wearable hardware stack in 36 hrs: CAD-modeled, 3D printed a custom headband + electronics enclosure (Fusion), integrated ESP32 microcontroller, 9-axis IMU, and 8-motor vibration array, and wrote C++ firmware for real-time sensor acquisition, motor PWM control, and UART serial communication with the host audio-processing pipeline. Developed real-time signal processing and control algorithms: implemented multi-channel audio detection and amplitude → haptic intensity mapping, programmed head-tilt → WASD movement using a Kalman filter to stabilize motion input and reduce sensor noise.",
+      "Engineered a real-time accessibility wearable for deaf gamers converting spatial audio → multi-channel haptic feedback via directional vibration. Built full hardware stack (ESP32, 9-axis IMU, 8-motor array, 3D-printed enclosure) and wrote C++ firmware for PWM motor control and UART communication. Implemented audio amplitude → haptic intensity mapping and Kalman-filtered head-tilt → WASD motion input.",
     tech: ["Python", "C++", "Embedded Systems", "Fusion", "WASAPI"],
     category: "Hardware",
     github: "https://github.com/sumedhk0/Game-Sense-TechHackValley",
