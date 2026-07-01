@@ -17,7 +17,7 @@ export const research: Research[] = [
     description:
       "Applied Bayesian statistical modeling to optimize lignin valorization reaction conditions. Integrated NMR, SEM, and HPLC modeling data for structural characterization of value-added chemicals from lignin breakdown. Collaborating on manuscript for peer-reviewed publication.",
     methods: ["Bayesian Modeling", "NMR", "SEM", "HPLC", "Python", "NumPy", "Pandas"],
-    status: "In Progress",
+    status: "Completed",
   },
   {
     id: "mof-carbon-capture",

@@ -17,7 +17,7 @@ export const projects: Project[] = [
       "4D Gaussian Splatting volumetric reconstruction pipeline that transforms multi-view third-person sports footage into player-specific first-person renderings. Applies 3D Gaussians onto SMPL-X human frames to recreate NFL footage from any player perspective, with a differentiable rendering pipeline and camera-pose optimization (PyTorch/CUDA) for real-time synthesis.",
     tech: ["Python", "PyTorch", "CUDA", "Gaussian Splatting", "SMPL-X"],
     category: "Software",
-    github: "#",
+    github: "https://github.com/sumedhk0/NFLGSPLAT",
   },
   {
     id: "techhackvalley-hackathon",
