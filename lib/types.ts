@@ -32,6 +32,16 @@ export interface SkillCategory {
   skills: string[];
 }
 
+export interface Education {
+  school: string;
+  degree: string;
+  minors: string[];
+  gpa: string;
+  period: string;
+  coursework: string[];
+  honors: string[];
+}
+
 export interface NavItem {
   label: string;
   href: string;

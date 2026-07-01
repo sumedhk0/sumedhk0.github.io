@@ -2,6 +2,17 @@ import { Experience } from "@/lib/types";
 
 export const experiences: Experience[] = [
   {
+    id: "witness-ai",
+    role: "Machine Learning Intern",
+    organization: "Witness.ai — Mountain View, CA",
+    period: "May 2026 — August 2026",
+    description: [
+      "Designed a novel adversarial ML framework combining GANs and Reinforcement Learning to autonomously generate harmful prompts and discover jailbreak vulnerabilities in modern LLMs (Claude Haiku, Qwen), with ongoing work toward an arXiv publication",
+      "Engineered an end-to-end agentic research pipeline in Python (PyTorch, vLLM, HuggingFace) that autonomously processed 1,000+ arXiv papers and synthesized emerging red-teaming methodologies into novel attack strategies",
+      "Built a scalable evaluation framework generating 3,000+ adversarial prompts with benign twin datasets, benchmarking 8 state-of-the-art open-source and proprietary LLMs into automated customer-facing safety reports",
+    ],
+  },
+  {
     id: "gt-rbi",
     role: "Research Intern",
     organization: "Georgia Tech Renewable Bioproducts Institute — Tong Laboratory",

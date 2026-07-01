@@ -2,6 +2,24 @@ import { Project } from "@/lib/types";
 
 export const projects: Project[] = [
   {
+    id: "polyuma",
+    title: "PolyUMA — Semiconducting Polymer Property Predictor",
+    description:
+      "Graph neural network materials-property model (inspired by Meta's eSEN) trained on 6M+ OPoly26 datapoints to learn structure–property relationships in semiconducting polymers, force fields, and interatomic potentials. Built a physics-informed molecular representation pipeline (backbone planarity, π–π stacking, chain rigidity) and an iterative self-refinement training loop with domain-seeded anchoring. Submitted to the Adaptation Autoscientist Challenge.",
+    tech: ["Python", "PyTorch", "Graph Neural Networks", "CUDA"],
+    category: "Software",
+    github: "#",
+  },
+  {
+    id: "sportsplat",
+    title: "SportSplat — 4D Gaussian Splatting for Sports",
+    description:
+      "4D Gaussian Splatting volumetric reconstruction pipeline that transforms multi-view third-person sports footage into player-specific first-person renderings. Applies 3D Gaussians onto SMPL-X human frames to recreate NFL footage from any player perspective, with a differentiable rendering pipeline and camera-pose optimization (PyTorch/CUDA) for real-time synthesis.",
+    tech: ["Python", "PyTorch", "CUDA", "Gaussian Splatting", "SMPL-X"],
+    category: "Software",
+    github: "#",
+  },
+  {
     id: "techhackvalley-hackathon",
     title: "GameSense - Winners - TechHack Valley 2026 Hackathon - Hardware Track",
     description:

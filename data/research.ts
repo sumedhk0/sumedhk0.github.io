@@ -2,6 +2,15 @@ import { Research } from "@/lib/types";
 
 export const research: Research[] = [
   {
+    id: "ml-pso",
+    title: "ML-Assisted Particle Swarm Optimization",
+    organization: "PACESHIP Scholar Research Grant",
+    description:
+      "Awarded a $1,000 grant to investigate ML methods for black-box optimization. Built a hybrid framework integrating Gaussian Process surrogate modeling, LightGBM-guided particle repositioning, and adaptive exploration–exploitation to steer stagnating particles. An autoresearch loop autonomously ran experiments and refined strategies, achieving an average 28.8% improvement over baseline PSO across benchmarks (97.8% Sphere, 99.9% Rastrigin, 90.4% Ackley, 58.8% Rosenbrock).",
+    methods: ["PyTorch", "Gaussian Processes", "LightGBM", "Surrogate Modeling", "Optimization"],
+    status: "Completed",
+  },
+  {
     id: "lignin-valorization",
     title: "Bayesian Optimization for Lignin Valorization",
     organization: "Georgia Tech Renewable Bioproducts Institute — Tong Laboratory",
