@@ -49,6 +49,16 @@ export const projects: Project[] = [
     live: "https://devpost.com/software/buzzinga-robotech-submission",
   },
   {
+    id: "gt-transfer-equivalency",
+    title: "GT Transfer Equivalencies — Reverse Transfer Search",
+    description:
+      "Searchable mirror of Georgia Tech's transfer equivalency table, flipped around: pick a GT course and see every school whose course transfers in, filterable by US state or community colleges only. Nightly GitHub Actions scraper (requests/BeautifulSoup) pulls OSCAR equivalencies for 2,000+ institutions (100k+ course mappings across 1,400+ GT courses), joins them against the federal College Scorecard API for state and degree-level data, and publishes a single JSON dataset consumed by a static client-side search UI on GitHub Pages. Includes a CLI for one-off queries.",
+    tech: ["Python", "BeautifulSoup", "GitHub Actions", "JavaScript", "College Scorecard API"],
+    category: "Software",
+    github: "https://github.com/sumedhk0/GTTransferEquivalency",
+    live: "https://sumedhk0.github.io/GTTransferEquivalency/",
+  },
+  {
     id: "ai-applier",
     title: "AiApply — AI Job Applier",
     description:
