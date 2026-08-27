@@ -36,7 +36,7 @@ export const experiences: Experience[] = [
     id: "gt-rbi",
     role: "Research Intern",
     organization: "Georgia Tech Renewable Bioproducts Institute — Tong Laboratory",
-    period: "August 2025 — Present",
+    period: "August 2025 — May 2026",
     description: [
       "Applied Bayesian statistical modeling using Python and NumPy/Pandas to optimize lignin valorization reaction conditions",
       "Utilized NMR, SEM, and HPLC modeling data to characterize value-added chemicals from lignin breakdown",
