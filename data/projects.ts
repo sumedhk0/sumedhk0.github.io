@@ -2,6 +2,15 @@ import { Project } from "@/lib/types";
 
 export const projects: Project[] = [
   {
+    id: "polyt5-rlvr",
+    title: "PolyT5-RLVR — Polymer Encoder-Decoder Model",
+    description:
+      "Reproduced and post-trained PolyT5, a 7.5M-parameter T5 pretrained on 92.3M polymers, and cut invalid polymer generations by 79% via GRPO and RL against chemistry-verifiable rewards. Cut Tg prediction error 5.2% (28.60 → 27.11 K) and structurally eliminated catastrophic decode failures by replacing text decoding with a linear regression head, validated by a two-seed unanimity criterion cleared on 10/10 splits across a 70-run five-factor ablation. Shipped distribution-free split-conformal prediction intervals (±54.35 K at 90%), converting point predictions into calibrated ranges.",
+    tech: ["Python", "PyTorch", "T5", "GRPO", "RLVR", "Conformal Prediction"],
+    category: "Research",
+    github: "https://github.com/sumedhk0/POLYT5-RLVR",
+  },
+  {
     id: "polyuma",
     title: "PolyUMA — Semiconducting Polymer Property Predictor",
     description:
@@ -14,7 +23,7 @@ export const projects: Project[] = [
     id: "sportsplat",
     title: "SportSplat — 4D Gaussian Splatting for Sports",
     description:
-      "4D Gaussian Splatting volumetric reconstruction pipeline that transforms multi-view third-person sports footage into player-specific first-person renderings. Applies 3D Gaussians onto SMPL-X human frames to recreate NFL footage from any player perspective, with a differentiable rendering pipeline and camera-pose optimization (PyTorch/CUDA) for real-time synthesis.",
+      "4D Gaussian Splatting volumetric reconstruction pipeline that transforms multi-view third-person sports footage into temporally coherent, player-specific first-person renderings using spatiotemporal Gaussian primitives. Trains a model to apply 3D Gaussians onto SMPL-X human frames to recreate NFL footage from any player perspective, with a differentiable rendering pipeline and camera-pose optimization (PyTorch/CUDA) that reconstructs dynamic 3D player trajectories for real-time synthesis.",
     tech: ["Python", "PyTorch", "CUDA", "Gaussian Splatting", "SMPL-X"],
     category: "Software",
     github: "https://github.com/sumedhk0/NFLGSPLAT",

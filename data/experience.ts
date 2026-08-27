@@ -2,14 +2,34 @@ import { Experience } from "@/lib/types";
 
 export const experiences: Experience[] = [
   {
+    id: "ramprasad-lab",
+    role: "Machine Learning Researcher",
+    organization: "Ramprasad Laboratory — Georgia Tech",
+    period: "July 2026 — Present",
+    description: [
+      "Developing machine-learned force fields (MLFFs) for polymers: a two-body pairing message-passing graph neural network that serves as an accurate, efficient surrogate for polymer DFT calculations",
+    ],
+  },
+  {
     id: "witness-ai",
     role: "Machine Learning Intern",
     organization: "Witness.ai — Mountain View, CA",
-    period: "May 2026 — August 2026",
+    period: "May 2026 — September 2026",
     description: [
-      "Designed a novel adversarial ML framework combining GANs and Reinforcement Learning to autonomously generate harmful prompts and discover jailbreak vulnerabilities in modern LLMs (Claude Haiku, Qwen), with ongoing work toward an arXiv publication",
-      "Engineered an end-to-end agentic research pipeline in Python (PyTorch, vLLM, HuggingFace) that autonomously processed 1,000+ arXiv papers and synthesized emerging red-teaming methodologies into novel attack strategies",
-      "Built a scalable evaluation framework generating 3,000+ adversarial prompts with benign twin datasets, benchmarking 8 state-of-the-art open-source and proprietary LLMs into automated customer-facing safety reports",
+      "Designed and implemented a novel adversarial ML framework combining GANs, SFT, GRPO, and RLVR to autonomously generate harmful prompts for discovering jailbreak vulnerabilities in modern LLMs (Claude Haiku, Qwen), reaching 60% ASR by optimizing attack-generation policies through iterative reward-based learning, with ongoing work toward an arXiv publication",
+      "Engineered an end-to-end agentic research pipeline in Python (PyTorch, vLLM, HuggingFace) that autonomously processed 1,000+ arXiv papers, synthesized emerging LLM red-teaming methodologies, and generated novel adversarial attack strategies",
+      "Built a scalable adversarial evaluation framework that generated 3,000+ adversarial prompts, benchmarked 8 state-of-the-art open-source and proprietary LLMs, fine-tuned 3 LLM safety classifiers on synthesized data, and produced automated customer-facing safety reports",
+    ],
+  },
+  {
+    id: "cheme-cube",
+    role: "Software & Mechanical Lead",
+    organization: "ChemE Cube — Georgia Tech",
+    period: "August 2025 — Present",
+    description: [
+      "Developed a Gaussian-process Bayesian optimization framework for CO₂ capture experiments, learning a surrogate model of capture performance from experimental data and selecting high-value operating conditions to accelerate reactor optimization",
+      "Leading the mechanical development of a 1 ft³ direct air capture reactor by managing a 5-member subteam and overseeing end-to-end CAD, prototyping, and systems integration, delivering a fully fabricated, test-ready prototype",
+      "Designing airflow distribution and sorbent containment subsystems using parametric CAD, 3D printing, and CNC machining, achieving a 75% reduction of ambient CO₂ in bench-scale validation for the AIChE competition (Nov 2026)",
     ],
   },
   {
@@ -27,21 +47,10 @@ export const experiences: Experience[] = [
     id: "gt-hytech",
     role: "Embedded Systems Engineer",
     organization: "HyTech Racing — Georgia Tech",
-    period: "February 2026 — Present",
+    period: "February 2026 — May 2026",
     description: [
       "Designed and implemented a real-time lap tracking module in modern C++ for Georgia Tech’s Formula SAE Racing team, leveraging Protocol Buffers (Protobuf) for low-latency telemetry serialization and deterministic inter-process communication across vehicle subsystems",
-      "Developing and deploying a YOLO-based object detection pipeline for driverless perception, enabling real-time cone detection and localization through C++ inference integration into the autonomous control stack",
-    ]
-  },
-  {
-    id: "cheme-cube",
-    role: "Team Lead — Mechanical",
-    organization: "ChemE Cube — Georgia Tech",
-    period: "August 2025 — Present",
-    description: [
-      "Led a 5-member mechanical team overseeing end-to-end design and CAD of a 1 ft³ DAC system, resulting in a fully integrated prototype",
-      "Designed and fabricated DAC hardware using 3D printing and CNC machining to build airflow pathways and zeolite containment",
-      "Engineered the DAC system for a 75% ambient CO₂ reduction by optimizing contactor geometry and airflow–sorbent interaction, prepared for AIChE national conference evaluation",
+      "Developed a YOLO-based object detection pipeline for driverless perception, enabling real-time cone detection and localization through C++ inference integration into the autonomous control stack",
     ],
   },
   {

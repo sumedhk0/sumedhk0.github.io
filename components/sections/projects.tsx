@@ -28,7 +28,7 @@ export function Projects() {
                   )}
                 </p>
               )}
-              <p className="text-muted">{project.description}</p>
+              <p className="mt-1">{project.description}</p>
               <p className="mt-1 text-sm text-muted">{project.tech.join(" · ")}</p>
             </div>
           );

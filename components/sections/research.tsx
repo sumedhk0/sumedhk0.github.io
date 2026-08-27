@@ -20,7 +20,7 @@ export function Research() {
                 <span className="text-muted"> · {item.status}</span>
               </p>
               <p className="text-muted">{item.organization}</p>
-              <p className="text-muted">{item.description}</p>
+              <p className="mt-1">{item.description}</p>
               <p className="mt-1 text-sm text-muted">{item.methods.join(" · ")}</p>
             </div>
           );

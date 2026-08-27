@@ -3,18 +3,43 @@ import { SkillCategory } from "@/lib/types";
 export const skills: SkillCategory[] = [
   {
     name: "Languages",
-    skills: ["Python", "Java", "TypeScript", "JavaScript", "C++", "HTML/CSS"],
+    skills: ["Python", "C++", "Java", "TypeScript", "JavaScript", "MATLAB", "HTML/CSS"],
   },
   {
-    name: "Frameworks",
-    skills: ["Flask", "FastAPI", "PyTorch", "CUDA", "Selenium", "Flutter"],
+    name: "ML & Frameworks",
+    skills: [
+      "PyTorch",
+      "CUDA",
+      "vLLM",
+      "HuggingFace",
+      "Scikit-learn",
+      "LightGBM",
+      "FastAPI",
+      "Flask",
+      "Selenium",
+      "Flutter",
+    ],
   },
   {
     name: "Data & Research",
-    skills: ["NumPy", "Pandas", "SciPy", "MATLAB", "Bayesian Modeling", "SEM", "NMR", "HPLC"],
+    skills: [
+      "NumPy",
+      "Pandas",
+      "SciPy",
+      "DFT",
+      "Bayesian Modeling",
+      "Gaussian Processes",
+      "SEM",
+      "NMR",
+      "HPLC",
+    ],
   },
   {
     name: "Tools",
-    skills: ["Docker", "Linux", "SQLite", "Redis", "SolidWorks", "Fusion", "Excel"],
+    skills: ["Linux", "Docker", "SQLite", "Redis", "SolidWorks", "Fusion", "Excel"],
+  },
+  {
+    name: "Communication",
+    skills: ["Technical Writing", "English", "Hindi", "Spanish"],
   },
 ];

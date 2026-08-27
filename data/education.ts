@@ -12,5 +12,10 @@ export const education: Education = {
     "Differential Equations",
     "Quantum Mechanics I",
   ],
-  honors: ["PACESHIP Scholar", "Symposium of Rising Scholars Presenter", "Eagle Scout"],
+  honors: [
+    "PACESHIP Scholar",
+    "TechHack Valley 2026 Hackathon Winner",
+    "Symposium of Rising Scholars Presenter",
+    "Eagle Scout",
+  ],
 };

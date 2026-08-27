@@ -4,12 +4,12 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Sumedh Kothari",
   description:
-    "Georgia Tech engineering student building intelligent systems across machine learning, robotics, and applied research.",
+    "Georgia Tech ML researcher working on LLM safety, machine-learned force fields for polymers, and learned optimization.",
   metadataBase: new URL("https://sumedh.dev"),
   openGraph: {
     title: "Sumedh Kothari",
     description:
-      "Georgia Tech engineering student building intelligent systems across machine learning, robotics, and applied research.",
+      "Georgia Tech ML researcher working on LLM safety, machine-learned force fields for polymers, and learned optimization.",
     url: "https://sumedh.dev",
     siteName: "Sumedh Kothari",
     locale: "en_US",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sumedh Kothari",
     description:
-      "Georgia Tech engineering student building intelligent systems across machine learning, robotics, and applied research.",
+      "Georgia Tech ML researcher working on LLM safety, machine-learned force fields for polymers, and learned optimization.",
   },
   robots: {
     index: true,

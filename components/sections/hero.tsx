@@ -3,11 +3,13 @@ export function Hero() {
     <header className="mb-16">
       <h1 className="mb-1 text-3xl">Sumedh Kothari</h1>
       <p className="mb-5 text-muted">
-        Georgia Tech · Chemical &amp; Biomolecular Engineering + Computer Science · 2028
+        Georgia Tech · Chemical &amp; Biomolecular Engineering · Minors in CS
+        (Intelligence) &amp; Quantum Sciences · 2028
       </p>
       <p className="mb-5">
-        Engineer building intelligent systems across machine learning, robotics,
-        and applied research.
+        Machine learning researcher building adversarial LLM safety systems,
+        ML surrogates for polymer and materials science, and learned optimization
+        methods.
       </p>
       <p className="text-muted">
         <a href="/Sumedh_Kothari_Resume.pdf" target="_blank" rel="noopener noreferrer">

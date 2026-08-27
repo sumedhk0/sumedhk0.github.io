@@ -2,11 +2,38 @@ import { Research } from "@/lib/types";
 
 export const research: Research[] = [
   {
+    id: "mlff-polymers",
+    title: "MLFFs for Polymers — Two-Body Pairing Message-Passing GNN",
+    organization: "Ramprasad Laboratory — Georgia Tech",
+    description:
+      "Machine-learned force fields for polymers: a two-body pairing message-passing graph neural network designed as an accurate, efficient surrogate for polymer DFT calculations.",
+    methods: ["Graph Neural Networks", "Message Passing", "DFT", "Force Fields", "PyTorch"],
+    status: "In Progress",
+  },
+  {
+    id: "adversarial-self-play",
+    title: "Adversarial Self-Play for Automated LLM Jailbreak Optimization",
+    organization: "Witness.ai",
+    description:
+      "Joint GRPO, SFT, RLVR, and generative adversarial training framework in which an attacker model autonomously learns to generate jailbreak prompts against modern LLMs (Claude Haiku, Qwen), reaching 60% ASR through iterative reward-based policy optimization. Ongoing work toward an arXiv publication.",
+    methods: ["GRPO", "SFT", "RLVR", "GANs", "LLM Red-Teaming", "vLLM"],
+    status: "In Progress",
+  },
+  {
+    id: "lilac",
+    title: "LiLAC — A Living Literature Adversarial Corpus",
+    organization: "Witness.ai",
+    description:
+      "Introduces an automated framework for continuously converting emerging jailbreak research into adversarial data for training and evaluating LLM safety classifiers. Powered by an agentic pipeline that processed 1,000+ arXiv papers and synthesized 3,000+ adversarial prompts used to benchmark 8 LLMs and fine-tune 3 safety classifiers.",
+    methods: ["Agentic Pipelines", "LLM Safety", "Classifier Fine-Tuning", "HuggingFace"],
+    status: "In Progress",
+  },
+  {
     id: "ml-pso",
     title: "ML-Assisted Particle Swarm Optimization",
     organization: "PACESHIP Scholar Research Grant",
     description:
-      "Awarded a $1,000 grant to investigate ML methods for black-box optimization. Built a hybrid framework integrating Gaussian Process surrogate modeling, LightGBM-guided particle repositioning, and adaptive exploration–exploitation to steer stagnating particles. An autoresearch loop autonomously ran experiments and refined strategies, achieving an average 28.8% improvement over baseline PSO across benchmarks (97.8% Sphere, 99.9% Rastrigin, 90.4% Ackley, 58.8% Rosenbrock).",
+      "Awarded a $1,000 grant to investigate ML methods for black-box optimization. Built a hybrid framework integrating Gaussian Process surrogate modeling, LightGBM-guided particle repositioning, and adaptive exploration–exploitation to identify stagnating particles and steer search trajectories. An autoresearch loop autonomously ran experiments, tuned hyperparameters, and refined strategies, achieving an average 28.8% improvement over baseline PSO across benchmarks (97.8% Sphere, 99.9% Rastrigin, 90.4% Ackley, 58.8% Rosenbrock).",
     methods: ["PyTorch", "Gaussian Processes", "LightGBM", "Surrogate Modeling", "Optimization"],
     status: "Completed",
   },
