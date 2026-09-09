@@ -1,11 +1,13 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
+export const size = { width: 1200, height: 630 };
+export const contentType = "image/png";
+export const alt = "Sumedh Kothari — Georgia Tech ML researcher";
 
 const NAME = "Sumedh Kothari";
-const TAGLINE = "Engineer building intelligent systems";
+const TAGLINE = "Machine learning researcher";
 const SUB = "Georgia Tech · Chemical & Biomolecular Engineering + CS · 2028";
-const URL = "sumedh.dev";
+const URL = "sumedhk0.github.io";
 
 async function loadGoogleFont(family: string, weight: number, text: string) {
   const url = `https://fonts.googleapis.com/css2?family=${family.replace(
@@ -20,7 +22,7 @@ async function loadGoogleFont(family: string, weight: number, text: string) {
   return res.arrayBuffer();
 }
 
-export async function GET() {
+export default async function Image() {
   const text = NAME + TAGLINE + SUB + URL;
 
   let fonts;
@@ -70,8 +72,7 @@ export async function GET() {
       </div>
     ),
     {
-      width: 1200,
-      height: 630,
+      ...size,
       ...(fonts ? { fonts } : {}),
     }
   );

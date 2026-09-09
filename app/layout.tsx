@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "Sumedh Kothari",
   description:
     "Georgia Tech ML researcher working on LLM safety, machine-learned force fields for polymers, and learned optimization.",
-  metadataBase: new URL("https://sumedh.dev"),
+  metadataBase: new URL("https://sumedhk0.github.io"),
   openGraph: {
     title: "Sumedh Kothari",
     description:
       "Georgia Tech ML researcher working on LLM safety, machine-learned force fields for polymers, and learned optimization.",
-    url: "https://sumedh.dev",
+    url: "https://sumedhk0.github.io",
     siteName: "Sumedh Kothari",
     locale: "en_US",
     type: "website",
