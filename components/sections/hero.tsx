@@ -3,8 +3,8 @@ export function Hero() {
     <header className="mb-16">
       <h1 className="mb-1 text-3xl">Sumedh Kothari</h1>
       <p className="mb-5 text-muted">
-        Georgia Tech · Chemical &amp; Biomolecular Engineering · Minors in CS
-        (Intelligence) &amp; Quantum Sciences · 2028
+        Georgia Tech · Chemical &amp; Biomolecular Engineering · Computer Science
+        (Intelligence) · Quantum Sciences · 2028
       </p>
       <p className="mb-5">
         Machine learning researcher building adversarial LLM safety systems,
