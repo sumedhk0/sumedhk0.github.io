@@ -16,7 +16,7 @@ export const experiences: Experience[] = [
     organization: "Witness.ai — Mountain View, CA",
     period: "May 2026 — September 2026",
     description: [
-      "Designed and implemented a novel adversarial ML framework combining GANs, SFT, GRPO, and RLVR to autonomously generate harmful prompts for discovering jailbreak vulnerabilities in modern LLMs (Claude Haiku, Qwen), reaching 60% ASR by optimizing attack-generation policies through iterative reward-based learning, with ongoing work toward an arXiv publication",
+      "Designed and implemented a novel adversarial ML framework combining GANs, SFT, GRPO, and RLVR to autonomously generate harmful prompts for discovering jailbreak vulnerabilities in modern LLMs (Claude Haiku, Qwen), reaching 60% ASR by optimizing attack-generation policies through iterative reward-based learning",
       "Engineered an end-to-end agentic research pipeline in Python (PyTorch, vLLM, HuggingFace) that autonomously processed 1,000+ arXiv papers, synthesized emerging LLM red-teaming methodologies, and generated novel adversarial attack strategies",
       "Built a scalable adversarial evaluation framework that generated 3,000+ adversarial prompts, benchmarked 8 state-of-the-art open-source and proprietary LLMs, fine-tuned 3 LLM safety classifiers on synthesized data, and produced automated customer-facing safety reports",
     ],

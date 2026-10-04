@@ -15,7 +15,7 @@ export const research: Research[] = [
     title: "Adversarial Self-Play for Automated LLM Jailbreak Optimization",
     organization: "Witness.ai",
     description:
-      "Joint GRPO, SFT, RLVR, and generative adversarial training framework in which an attacker model autonomously learns to generate jailbreak prompts against modern LLMs (Claude Haiku, Qwen), reaching 60% ASR through iterative reward-based policy optimization. Ongoing work toward an arXiv publication.",
+      "Joint GRPO, SFT, RLVR, and generative adversarial training framework in which an attacker model autonomously learns to generate jailbreak prompts against modern LLMs (Claude Haiku, Qwen), reaching 60% ASR through iterative reward-based policy optimization.",
     methods: ["GRPO", "SFT", "RLVR", "GANs", "LLM Red-Teaming", "vLLM"],
     status: "Completed",
   },
