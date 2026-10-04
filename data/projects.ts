@@ -20,13 +20,14 @@ export const projects: Project[] = [
     github: "#",
   },
   {
-    id: "sportsplat",
-    title: "SportSplat — 4D Gaussian Splatting for Sports",
+    id: "panoptic-pigskin",
+    title: "Panoptic Pigskin — 4D Gaussian Splatting for Sports",
     description:
       "4D Gaussian Splatting volumetric reconstruction pipeline that transforms multi-view third-person sports footage into temporally coherent, player-specific first-person renderings using spatiotemporal Gaussian primitives. Trains a model to apply 3D Gaussians onto SMPL-X human frames to recreate NFL footage from any player perspective, with a differentiable rendering pipeline and camera-pose optimization (PyTorch/CUDA) that reconstructs dynamic 3D player trajectories for real-time synthesis.",
     tech: ["Python", "PyTorch", "CUDA", "Gaussian Splatting", "SMPL-X"],
     category: "Software",
-    github: "https://github.com/sumedhk0/NFLGSPLAT",
+    github: "https://github.com/sumedhk0/PanopticPigskin",
+    live: "https://panopticpigskin.tech",
   },
   {
     id: "techhackvalley-hackathon",

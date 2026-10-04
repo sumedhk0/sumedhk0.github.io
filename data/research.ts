@@ -17,7 +17,7 @@ export const research: Research[] = [
     description:
       "Joint GRPO, SFT, RLVR, and generative adversarial training framework in which an attacker model autonomously learns to generate jailbreak prompts against modern LLMs (Claude Haiku, Qwen), reaching 60% ASR through iterative reward-based policy optimization. Ongoing work toward an arXiv publication.",
     methods: ["GRPO", "SFT", "RLVR", "GANs", "LLM Red-Teaming", "vLLM"],
-    status: "In Progress",
+    status: "Completed",
   },
   {
     id: "lilac",
@@ -26,7 +26,7 @@ export const research: Research[] = [
     description:
       "Introduces an automated framework for continuously converting emerging jailbreak research into adversarial data for training and evaluating LLM safety classifiers. Powered by an agentic pipeline that processed 1,000+ arXiv papers and synthesized 3,000+ adversarial prompts used to benchmark 8 LLMs and fine-tune 3 safety classifiers.",
     methods: ["Agentic Pipelines", "LLM Safety", "Classifier Fine-Tuning", "HuggingFace"],
-    status: "In Progress",
+    status: "Completed",
   },
   {
     id: "ml-pso",
