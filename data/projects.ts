@@ -21,10 +21,10 @@ export const projects: Project[] = [
   },
   {
     id: "panoptic-pigskin",
-    title: "Panoptic Pigskin — 4D Gaussian Splatting for Sports",
+    title: "Panoptic Pigskin — NFL 4D Gaussian Splatting",
     description:
-      "4D Gaussian Splatting volumetric reconstruction pipeline that transforms multi-view third-person sports footage into temporally coherent, player-specific first-person renderings using spatiotemporal Gaussian primitives. Trains a model to apply 3D Gaussians onto SMPL-X human frames to recreate NFL footage from any player perspective, with a differentiable rendering pipeline and camera-pose optimization (PyTorch/CUDA) that reconstructs dynamic 3D player trajectories for real-time synthesis.",
-    tech: ["Python", "PyTorch", "CUDA", "Gaussian Splatting", "SMPL-X"],
+      "Reconstructs NFL plays in 3D from just two broadcast camera angles, validated at 0.15 m median error against official NFL player-tracking data (41× below per-frame calibration), by self-training YOLOv8x-pose per play on 115K SMPL-X pseudo-labels projected across positionally and rotationally solved cameras. Cut physically implausible motion from 17% to 5% of frames by smoothing each track along its camera's depth axis, powering free-viewpoint Gaussian-splat replays and an automated report grading all 22 players (separation, time to throw, air yards, YAC).",
+    tech: ["Python", "YOLOv8", "SMPL-X", "SMPLest-X", "EasyOCR", "OpenCV", "SciPy", "Gaussian Splatting"],
     category: "Software",
     github: "https://github.com/sumedhk0/PanopticPigskin",
     live: "https://panopticpigskin.tech",

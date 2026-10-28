@@ -3,7 +3,7 @@ import { Education } from "@/lib/types";
 export const education: Education = {
   school: "Georgia Institute of Technology",
   degree: "B.S. Chemical & Biomolecular Engineering",
-  minors: ["Computer Science — Intelligence", "Quantum Sciences and Technology"],
+  minors: ["Computer Science — Intelligence", "Physics — Quantum Sciences and Technology"],
   gpa: "3.91",
   period: "Expected May 2028",
   coursework: [

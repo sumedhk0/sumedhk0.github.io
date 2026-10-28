@@ -7,18 +7,21 @@ export const experiences: Experience[] = [
     organization: "Ramprasad Laboratory — Georgia Tech",
     period: "July 2026 — Present",
     description: [
-      "Developing machine-learned force fields (MLFFs) for polymers: a two-body pairing message-passing graph neural network that serves as an accurate, efficient surrogate for polymer DFT calculations",
+      "PolyFrameNet: designed a block-factored polymer MLIP that factors chains into graph-defined rigid blocks with local coordinate frames, replacing equivariant tensor products with plain MLPs while guaranteeing exact O(3) and permutation symmetry via Weisfeiler–Lehman frame averaging",
+      "Achieved 2.5–5.5× faster inference and 3.4× less GPU memory than MACE and Allegro at a matched training budget (90 min, one L40S) on 876K-atom OPoly26 data; matched MACE force error on polyethylene (13.7 meV/Å) and scaled to 26K-atom melts",
+      "Open-sourced the PyTorch/ASE implementation and trained weights with an 81-test correctness suite and a block registry that flags chemistries outside the training set, so users know when predictions extrapolate",
+      "PolyDYN: building a multi-agent LLM framework for autonomous polymer design and discovery with MLIP-driven property screening",
     ],
   },
   {
     id: "witness-ai",
     role: "Machine Learning Intern",
-    organization: "Witness.ai — Mountain View, CA",
+    organization: "Witness AI — Mountain View, CA",
     period: "May 2026 — September 2026",
     description: [
-      "Designed and implemented a novel adversarial ML framework combining GANs, SFT, GRPO, and RLVR to autonomously generate harmful prompts for discovering jailbreak vulnerabilities in modern LLMs (Claude Haiku, Qwen), reaching 60% ASR by optimizing attack-generation policies through iterative reward-based learning",
-      "Engineered an end-to-end agentic research pipeline in Python (PyTorch, vLLM, HuggingFace) that autonomously processed 1,000+ arXiv papers, synthesized emerging LLM red-teaming methodologies, and generated novel adversarial attack strategies",
-      "Built a scalable adversarial evaluation framework that generated 3,000+ adversarial prompts, benchmarked 8 state-of-the-art open-source and proprietary LLMs, fine-tuned 3 LLM safety classifiers on synthesized data, and produced automated customer-facing safety reports",
+      "Built an adversarial self-play framework for automated jailbreak discovery that combines generative adversarial training, SFT, and GRPO with verifiable rewards, optimizing attack policies via iterative reward-based learning and Thompson sampling; generated 10,000 jailbreak prompts reaching 60% attack success on Claude, Qwen, and Gemma, used to train a prompt-safety classifier",
+      "Built LiLAC (Living Literature Adversarial Corpus), an end-to-end agentic research pipeline in Python (PyTorch, vLLM, HuggingFace) that autonomously processed 1,000+ arXiv papers, synthesized emerging LLM red-teaming methods, and continuously converted them into novel attack strategies and adversarial data for training and evaluating LLM safety classifiers and jailbreak guards",
+      "Developed a scalable evaluation framework that generated 3,000+ adversarial prompts, benchmarked 8 state-of-the-art open-source and proprietary LLMs, fine-tuned 3 safety classifiers on the synthesized data, and automated customer-facing safety reports",
     ],
   },
   {
@@ -27,9 +30,9 @@ export const experiences: Experience[] = [
     organization: "ChemE Cube — Georgia Tech",
     period: "August 2025 — Present",
     description: [
-      "Developed a Gaussian-process Bayesian optimization framework for CO₂ capture experiments, learning a surrogate model of capture performance from experimental data and selecting high-value operating conditions to accelerate reactor optimization",
-      "Leading the mechanical development of a 1 ft³ direct air capture reactor by managing a 5-member subteam and overseeing end-to-end CAD, prototyping, and systems integration, delivering a fully fabricated, test-ready prototype",
-      "Designing airflow distribution and sorbent containment subsystems using parametric CAD, 3D printing, and CNC machining, achieving a 75% reduction of ambient CO₂ in bench-scale validation for the AIChE competition (Nov 2026)",
+      "Developed a Gaussian-process Bayesian optimization framework for CO₂ capture experiments that learns a surrogate model of capture performance from experimental data and selects the next high-value operating conditions to test, accelerating reactor optimization",
+      "Lead mechanical development of a 1 ft³ direct air capture reactor for the AIChE ChemE Cube competition (Nov 2026), managing a 5-member subteam through end-to-end CAD, prototyping, and systems integration into a fully fabricated, test-ready prototype",
+      "Designed airflow distribution and sorbent containment subsystems using parametric CAD, 3D printing, and CNC machining, achieving a 75% reduction in ambient CO₂ concentration during bench-scale validation of the full direct air capture prototype",
     ],
   },
   {

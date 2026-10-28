@@ -15,10 +15,11 @@ export function About() {
         Georgia Tech engineering student working at the intersection of machine
         learning, chemistry, and applied research. Most recently I built an
         adversarial self-play framework (GANs + SFT + GRPO + RLVR) for automated
-        LLM jailbreak discovery at Witness.ai, and I now develop machine-learned
-        force fields for polymers in the Ramprasad Laboratory. I also work on
-        reinforcement-learning post-training of chemistry language models,
-        surrogate-assisted optimization, and 4D Gaussian splatting.
+        LLM jailbreak discovery at Witness AI, and I now build PolyFrameNet, a
+        fast block-factored machine-learned interatomic potential for polymers,
+        in the Ramprasad Laboratory. I also work on reinforcement-learning
+        post-training of chemistry language models, surrogate-assisted
+        optimization, and 3D reconstruction of NFL plays from broadcast footage.
       </p>
       <p className="mb-6">
         <span className="text-muted">Focus:</span> {focusAreas.join(" · ")}
