@@ -6,11 +6,15 @@ import { Experience } from "@/components/sections/experience";
 import { Projects } from "@/components/sections/projects";
 import { Research } from "@/components/sections/research";
 import { Contact } from "@/components/sections/contact";
+import { PeriodicTable } from "@/components/table/periodic-table";
 
 export default function Home() {
   return (
-    <main className="mx-auto max-w-[840px] px-6 py-16">
+    <main className="mx-auto max-w-[1100px] px-6 py-16">
       <Hero />
+      <section id="work" className="mb-16">
+        <PeriodicTable />
+      </section>
       <div className="space-y-16">
         <About />
         <Education />

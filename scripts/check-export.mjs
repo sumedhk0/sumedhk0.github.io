@@ -33,4 +33,13 @@ function fail(msg) {
 assertFile("index.html");
 assertFile("404.html");
 
+// Task 3 — periodic table (table, cell-fit)
+for (let n = 1; n <= 18; n++) {
+  const re = new RegExp(`aria-label="[^"]+, element ${n}, [^"]+"`);
+  if (!re.test(read("index.html"))) fail(`table: no cell labelled "element ${n}"`);
+}
+assertContains("index.html", 'href="/work/pf/"', "table");
+assertNotContains("index.html", 'href="/work/ar/"', "table (card elements must not link)");
+assertContains("index.html", "cell-name", "cell-fit (names render as truncatable spans)");
+
 console.log("check-export: all assertions passed");
