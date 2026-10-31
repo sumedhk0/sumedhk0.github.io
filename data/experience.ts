@@ -8,7 +8,7 @@ export const experiences: Experience[] = [
     period: "July 2026 — Present",
     description: [
       "PolyFrameNet: designed a block-factored polymer MLIP that factors chains into graph-defined rigid blocks with local coordinate frames, replacing equivariant tensor products with plain MLPs while guaranteeing exact O(3) and permutation symmetry via Weisfeiler–Lehman frame averaging",
-      "Achieved 2.5–5.5× faster inference and 3.4× less GPU memory than MACE and Allegro at a matched training budget (90 min, one L40S) on 876K-atom OPoly26 data; matched MACE force error on polyethylene (13.7 meV/Å) and scaled to 26K-atom melts",
+      "Ran 2.5–5.5× faster than MACE with 3.4–6.4× less GPU memory at equal training compute (90 min, one L40S) on 876K-atom OPoly26 data, and simulated 26K-atom melts where MACE and Allegro ran out of memory, trading some force accuracy for speed and scale",
       "Open-sourced the PyTorch/ASE implementation and trained weights with an 81-test correctness suite and a block registry that flags chemistries outside the training set, so users know when predictions extrapolate",
       "PolyDYN: building a multi-agent LLM framework for autonomous polymer design and discovery with MLIP-driven property screening",
     ],

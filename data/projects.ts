@@ -5,7 +5,7 @@ export const projects: Project[] = [
     id: "polyt5-rlvr",
     title: "PolyT5-RLVR — Polymer Encoder-Decoder Model",
     description:
-      "Reproduced and post-trained PolyT5, a 7.5M-parameter T5 pretrained on 92.3M polymers, and cut invalid polymer generations by 79% via GRPO and RL against chemistry-verifiable rewards. Cut Tg prediction error 5.2% (28.60 → 27.11 K) and structurally eliminated catastrophic decode failures by replacing text decoding with a linear regression head, validated by a two-seed unanimity criterion cleared on 10/10 splits across a 70-run five-factor ablation. Shipped distribution-free split-conformal prediction intervals (±54.35 K at 90%), converting point predictions into calibrated ranges.",
+      "Rebuilt PolyT5 from scratch, a 7.46M-parameter T5 pretrained on 92.3M polymers, landing in the paper's accuracy band (Tg RMSE 44.45 vs 40.82 K). Post-trained the generator with GRPO against chemistry-verifiable rewards: the validity reward raised the valid-polymer rate from 52.6% to 90.1%, but every chemistry reward also destroyed target-Tg control (conditioning slope 0.904 → ~0.3). A stronger KL anchor recovered under 5% of the loss; supervised replay recovered 99% (slope 0.973) while keeping +12.5 points of validity. On prediction, a linear regression head cut Tg error 5.2% (28.60 → 27.11 K) and beat the baseline on all 10 split-seed pairs of a 70-run ablation. Split-conformal intervals give ±54.35 K at 90% coverage.",
     tech: ["Python", "PyTorch", "T5", "GRPO", "RLVR", "Conformal Prediction"],
     category: "Research",
     github: "https://github.com/sumedhk0/POLYT5-RLVR",
@@ -23,7 +23,7 @@ export const projects: Project[] = [
     id: "panoptic-pigskin",
     title: "Panoptic Pigskin — NFL 4D Gaussian Splatting",
     description:
-      "Reconstructs NFL plays in 3D from just two broadcast camera angles, validated at 0.15 m median error against official NFL player-tracking data (41× below per-frame calibration), by self-training YOLOv8x-pose per play on 115K SMPL-X pseudo-labels projected across positionally and rotationally solved cameras. Cut physically implausible motion from 17% to 5% of frames by smoothing each track along its camera's depth axis, powering free-viewpoint Gaussian-splat replays and an automated report grading all 22 players (separation, time to throw, air yards, YAC).",
+      "Reconstructs NFL plays in 3D from two broadcast camera angles. On a play with official 10 Hz NFL tracking data, the solved camera geometry places held-out players at 0.15 m median error, 41× below per-frame calibration. A YOLOv8x-pose model is self-trained per play on ~115K keypoint labels, and smoothing each track along its camera's depth axis cut physically implausible motion from 17% to 5.5% of body-frames. Powers free-viewpoint Gaussian-splat replays and a per-player report with automatically measured time to throw, air yards, YAC and separation.",
     tech: ["Python", "YOLOv8", "SMPL-X", "SMPLest-X", "EasyOCR", "OpenCV", "SciPy", "Gaussian Splatting"],
     category: "Software",
     github: "https://github.com/sumedhk0/PanopticPigskin",

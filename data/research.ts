@@ -6,7 +6,7 @@ export const research: Research[] = [
     title: "PolyFrameNet — Block-Factored Polymer MLIP",
     organization: "Ramprasad Laboratory — Georgia Tech",
     description:
-      "A polymer machine-learned interatomic potential that factors chains into graph-defined rigid blocks with local coordinate frames, replacing equivariant tensor products with plain MLPs while guaranteeing exact O(3) and permutation symmetry via Weisfeiler–Lehman frame averaging. Runs 2.5–5.5× faster with 3.4× less GPU memory than MACE and Allegro at a matched training budget (90 min, one L40S) on 876K-atom OPoly26 data, matches MACE force error on polyethylene (13.7 meV/Å), and scales to 26K-atom melts. Open-sourced as a PyTorch/ASE implementation with trained weights, an 81-test correctness suite, and a block registry that flags chemistries outside the training set.",
+      "A polymer machine-learned interatomic potential that factors chains into graph-defined rigid blocks with local coordinate frames, replacing equivariant tensor products with plain MLPs while keeping exact O(3) and permutation symmetry via Weisfeiler–Lehman frame averaging. At equal training compute (90 min, one L40S, 876K-atom OPoly26 data) it runs 2.5–5.5× faster than MACE with 3.4–6.4× less GPU memory, and it simulates 26K-atom melts where MACE and Allegro run out of memory. The trade-off is accuracy: hydrocarbon force error is 43.4 meV/Å vs MACE's 19.7. Open-sourced as a PyTorch/ASE implementation with trained weights, an 81-test correctness suite, and a block registry that flags chemistries outside the training set.",
     methods: ["MLIPs", "Frame Averaging", "PyTorch", "ASE", "MACE", "Allegro"],
     status: "In Progress",
   },
@@ -42,7 +42,7 @@ export const research: Research[] = [
     title: "ML-Assisted Particle Swarm Optimization",
     organization: "PACESHIP Scholar Research Grant",
     description:
-      "Awarded a $1,000 grant to investigate ML methods for black-box optimization. Built a hybrid framework integrating Gaussian Process surrogate modeling, LightGBM-guided particle repositioning, and adaptive exploration–exploitation to identify stagnating particles and steer search trajectories. An autoresearch loop autonomously ran experiments, tuned hyperparameters, and refined strategies, achieving an average 28% improvement over baseline PSO across benchmarks (97.8% Sphere, 99.9% Rastrigin, 90.4% Ackley, 58.8% Rosenbrock).",
+      "Awarded a $1,000 PACESHIP Scholar grant to study ML methods for black-box optimization. Built a hybrid optimizer that combines Gaussian-process surrogate models with LightGBM-guided repositioning of stagnating particles and an explore/exploit split. On 50-dimensional benchmarks (median of 51 seeds), the ML layer cut final error 38–96% relative to the same GP-guided optimizer without it, and beat vanilla PSO by 90.4% on Ackley, 53.6% on Rastrigin, and 23.6% on Rosenbrock. It was 29.9% worse on Griewank, added 3.5–22.6% runtime, and under a fixed time budget random rescue beat the learned classifier.",
     methods: ["PyTorch", "Gaussian Processes", "LightGBM", "Surrogate Modeling", "Optimization"],
     status: "Completed",
   },
