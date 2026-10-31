@@ -42,4 +42,7 @@ assertContains("index.html", 'href="/work/pf/"', "table");
 assertNotContains("index.html", 'href="/work/ar/"', "table (card elements must not link)");
 assertContains("index.html", "cell-name", "cell-fit (names render as truncatable spans)");
 
+// Task 4 — polymer spine has a no-JS fallback in the static HTML
+assertContains("index.html", "spine-fallback", "spine fallback");
+
 console.log("check-export: all assertions passed");
