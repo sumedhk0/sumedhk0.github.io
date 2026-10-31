@@ -5,7 +5,7 @@ export const projects: Project[] = [
     id: "polyt5-rlvr",
     title: "PolyT5-RLVR — Polymer Encoder-Decoder Model",
     description:
-      "Rebuilt PolyT5 from scratch, a 7.46M-parameter T5 pretrained on 92.3M polymers, landing in the paper's accuracy band (Tg RMSE 44.45 vs 40.82 K). Post-trained the generator with GRPO against chemistry-verifiable rewards: the validity reward raised the valid-polymer rate from 52.6% to 90.1%, but every chemistry reward also destroyed target-Tg control (conditioning slope 0.904 → ~0.3). A stronger KL anchor recovered under 5% of the loss; supervised replay recovered 99% (slope 0.973) while keeping +12.5 points of validity. On prediction, a linear regression head cut Tg error 5.2% (28.60 → 27.11 K) and beat the baseline on all 10 split-seed pairs of a 70-run ablation. Split-conformal intervals give ±54.35 K at 90% coverage.",
+      "Reproduced the Ramprasad Lab's PolyT5 from scratch (a 7.46M-parameter T5 encoder-decoder pretrained on 92.3M polymers) within the paper's accuracy band, then post-trained it with GRPO against chemistry-verifiable rewards, cutting chemically invalid generations by 79%. Found that the chemistry rewards erased target-Tg control and restored 99% of it with supervised replay while keeping a 12.5-point validity gain. Replaced text decoding with a regression head, cutting Tg error 5.2% (28.60 → 27.11 K) and eliminating catastrophic decode failures on all 10 split–seed pairs of a 70-run ablation, and added split-conformal intervals (±54.35 K at 90% coverage).",
     tech: ["Python", "PyTorch", "T5", "GRPO", "RLVR", "Conformal Prediction"],
     category: "Research",
     github: "https://github.com/sumedhk0/POLYT5-RLVR",
@@ -23,7 +23,7 @@ export const projects: Project[] = [
     id: "panoptic-pigskin",
     title: "Panoptic Pigskin — NFL 4D Gaussian Splatting",
     description:
-      "Reconstructs NFL plays in 3D from two broadcast camera angles. On a play with official 10 Hz NFL tracking data, the solved camera geometry places held-out players at 0.15 m median error, 41× below per-frame calibration. A YOLOv8x-pose model is self-trained per play on ~115K keypoint labels, and smoothing each track along its camera's depth axis cut physically implausible motion from 17% to 5.5% of body-frames. Powers free-viewpoint Gaussian-splat replays and a per-player report with automatically measured time to throw, air yards, YAC and separation.",
+      "Reconstructs NFL plays in 3D from just two broadcast angles at 0.15 m median error against official NFL tracking data (41× below per-frame calibration), by self-training YOLOv8x-pose per play on 115K pose pseudo-labels across both pose-solved cameras. Smoothing each track along its camera's depth axis cut physically implausible motion from 17% to 5.5% of body-frames, powering free-viewpoint Gaussian-splat replays and an automated 22-player report (separation, time to throw, air yards, YAC).",
     tech: ["Python", "YOLOv8", "SMPL-X", "SMPLest-X", "EasyOCR", "OpenCV", "SciPy", "Gaussian Splatting"],
     category: "Software",
     github: "https://github.com/sumedhk0/PanopticPigskin",
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     id: "techhackvalley-hackathon",
     title: "GameSense - Winners - TechHack Valley 2026 Hackathon - Hardware Track",
     description:
-      "Engineered a real-time accessibility wearable for deaf gamers converting spatial audio → multi-channel haptic feedback via directional vibration. Built full hardware stack (ESP32, 9-axis IMU, 8-motor array, 3D-printed enclosure) and wrote C++ firmware for PWM motor control and UART communication. Implemented audio amplitude → haptic intensity mapping and Kalman-filtered head-tilt → WASD motion input.",
+      "Engineered a real-time accessibility wearable for deaf gamers converting spatial audio → multi-channel haptic feedback via directional vibration. Built full hardware stack (ESP32, 9-axis IMU, 8-motor array, 3D-printed enclosure) and wrote C++ firmware for PWM motor control and UART communication. Implemented audio amplitude → haptic intensity mapping and IMU head-tilt → WASD motion input over Bluetooth LE.",
     tech: ["Python", "C++", "Embedded Systems", "Fusion", "WASAPI"],
     category: "Hardware",
     github: "https://github.com/sumedhk0/Game-Sense-TechHackValley",
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     id: "robotech-hackathon",
     title: "IEEE Robotech 2026 Hackathon — Autonomous Track",
     description:
-      "Designed and CAD-modeled a fully autonomous debris-clearing robot in SolidWorks. Developed a YOLO-based CV model in PyTorch achieving 95% debris detection accuracy. Integrated perception, navigation, and actuation systems for end-to-end autonomous operation.",
+      "Designed and CAD-modeled a fully autonomous debris-clearing robot in SolidWorks. Trained a single-class YOLO11 detection model for debris, reaching a 95% detection-and-removal rate in the team's runs. Integrated perception, navigation, and actuation systems for end-to-end autonomous operation.",
     tech: ["Python", "PyTorch", "YOLO", "SolidWorks", "Embedded Systems"],
     category: "Hardware",
     github: "https://github.com/wschotte/buzzinga-robotech-2026",
@@ -66,8 +66,7 @@ export const projects: Project[] = [
       "Full-stack AI-powered internship application platform automating end-to-end job search workflows — resume optimization, cover letter generation, programmatic Handshake submission, recruiter scraping, and automated personalized outreach at scale.",
     tech: ["Python", "Selenium WebDriver", "HTML", "JavaScript"],
     category: "Software",
-    github: "https://github.com/sumedhk0/",
-    live: "https://ai-apply-12tq.onrender.com/",
+    github: "https://github.com/sumedhk0/AiApply",
   },
   {
     id: "arbitrage-engine",
