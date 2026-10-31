@@ -235,9 +235,20 @@
   .drawing-index a[aria-current] {
     color: var(--blueprint);
     font-weight: 500;
+    box-shadow: inset 3px 0 0 var(--blueprint);
   }
   .drawing-index a[aria-current] span {
     color: var(--blueprint);
+  }
+  /* Same inverted-ink hover as the hero buttons; no transition, so it is instant. */
+  .drawing-index a:hover,
+  .drawing-index a:hover span {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .drawing-index a:focus-visible {
+    outline: 2px solid var(--blueprint);
+    outline-offset: -2px;
   }
 
   .sec {
