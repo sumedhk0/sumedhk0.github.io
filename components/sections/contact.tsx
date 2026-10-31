@@ -1,18 +1,20 @@
+import { SectionHead } from "@/components/home/section-head";
+
 export function Contact() {
   return (
-    <section id="contact">
-      <h2 className="mb-4 border-b border-rule pb-2 text-xl">Contact</h2>
-      <p className="mb-4">
-        Interested in working together or have a question? Feel free to reach out.
+    <section id="contact" className="sec">
+      <SectionHead num="07" title="Contact" />
+      <p className="prose-col">
+        I&apos;m happy to talk about research, internships, or anything on this page. Email is fastest:{" "}
+        <a href="mailto:skothari67@gatech.edu" className="select-all">
+          skothari67@gatech.edu
+        </a>
       </p>
-      <p className="text-muted">
-        <a href="mailto:skothari67@gatech.edu">skothari67@gatech.edu</a>
-        {"  ·  "}
-        <a href="https://github.com/sumedhk0" target="_blank" rel="noopener noreferrer">
+      <p className="hero-links">
+        <a className="btn-mono" href="https://github.com/sumedhk0" target="_blank" rel="noopener noreferrer">
           GitHub ↗
         </a>
-        {"  ·  "}
-        <a href="https://linkedin.com/in/sumedh-kothari" target="_blank" rel="noopener noreferrer">
+        <a className="btn-mono" href="https://linkedin.com/in/sumedh-kothari" target="_blank" rel="noopener noreferrer">
           LinkedIn ↗
         </a>
       </p>

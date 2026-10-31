@@ -1,29 +1,37 @@
-import { Footer } from "@/components/layout/footer";
-import { Hero } from "@/components/sections/hero";
-import { About } from "@/components/sections/about";
-import { Education } from "@/components/sections/education";
-import { Experience } from "@/components/sections/experience";
-import { Projects } from "@/components/sections/projects";
-import { Research } from "@/components/sections/research";
-import { Contact } from "@/components/sections/contact";
+import { Hero } from "@/components/home/hero";
+import { TitleBlock } from "@/components/home/title-block";
+import { DrawingIndex } from "@/components/home/drawing-index";
+import { SectionHead } from "@/components/home/section-head";
 import { PeriodicTable } from "@/components/table/periodic-table";
+import { About } from "@/components/sections/about";
+import { Experience } from "@/components/sections/experience";
+import { Research } from "@/components/sections/research";
+import { Projects } from "@/components/sections/projects";
+import { Education } from "@/components/sections/education";
+import { Contact } from "@/components/sections/contact";
+import { Footer } from "@/components/layout/footer";
 
 export default function Home() {
   return (
-    <main className="mx-auto max-w-[1100px] px-6 py-16">
+    <div className="page">
+      <TitleBlock />
       <Hero />
-      <section id="work" className="mb-16">
-        <PeriodicTable />
-      </section>
-      <div className="space-y-16">
-        <About />
-        <Education />
-        <Experience />
-        <Projects />
-        <Research />
-        <Contact />
+      <div className="sheet">
+        <DrawingIndex />
+        <main className="sheet-main">
+          <section id="work" className="sec">
+            <SectionHead num="01" title="Work" />
+            <PeriodicTable />
+          </section>
+          <About />
+          <Experience />
+          <Research />
+          <Projects />
+          <Education />
+          <Contact />
+        </main>
       </div>
       <Footer />
-    </main>
+    </div>
   );
 }

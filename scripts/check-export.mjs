@@ -45,4 +45,23 @@ assertContains("index.html", "cell-name", "cell-fit (names render as truncatable
 // Task 4 — polymer spine has a no-JS fallback in the static HTML
 assertContains("index.html", "spine-fallback", "spine fallback");
 
+// Task 5 — home page structure
+{
+  const html = read("index.html");
+  const ids = ["work", "about", "experience", "research", "projects", "education", "contact"];
+  const pos = ids.map((id) => html.indexOf(`id="${id}"`));
+  ids.forEach((id, i) => {
+    if (pos[i] < 0) fail(`home: section #${id} missing`);
+    if (i > 0 && pos[i] < pos[i - 1]) fail(`home: section #${id} is out of order`);
+  });
+  ["Work", "About", "Experience", "Research", "Projects", "Education", "Contact"].forEach((label, i) => {
+    const num = String(i + 1).padStart(2, "0");
+    if (!new RegExp(`${num}</span>\\s*${label}`).test(html)) fail(`home: drawing index lacks "${num} ${label}"`);
+  });
+}
+assertContains("index.html", "Crop Growth Predictor", "home (off-table projects stay listed)");
+assertContains("index.html", "AiApply", "home (off-table projects stay listed)");
+assertContains("index.html", "Sumedh_Kothari_Resume.pdf", "home (resume link)");
+assertNotContains("index.html", "Witness.ai", "home (resume spelling is Witness AI)");
+
 console.log("check-export: all assertions passed");

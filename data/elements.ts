@@ -137,3 +137,23 @@ export const ELEMENTS: ElementRecord[] = [
     ],
   },
 ];
+
+/** Which element a research or project record belongs to (ids from data/research.ts and data/projects.ts). */
+export const ELEMENT_OF: Record<string, string> = {
+  polyframenet: "pf",
+  polydyn: "dy",
+  "adversarial-self-play": "as",
+  lilac: "li",
+  "ml-pso": "ps",
+  "lignin-valorization": "lg",
+  "mof-carbon-capture": "mf",
+  "polyt5-rlvr": "pt",
+  "panoptic-pigskin": "pp",
+  "techhackvalley-hackathon": "gs",
+  "robotech-hackathon": "rb",
+  "gt-transfer-equivalency": "gt",
+  "arbitrage-engine": "ar",
+  ecoflow: "ef",
+  "github-analyzer": "ga",
+  resumeforge: "rf",
+};

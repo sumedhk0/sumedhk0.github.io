@@ -1,39 +1,60 @@
 import { projects } from "@/data/projects";
+import { ELEMENT_OF } from "@/data/elements";
+import { SectionHead } from "@/components/home/section-head";
+import { Entry } from "@/components/home/entry";
+import { SpineList } from "@/components/spine/spine-list";
+
+const real = (href?: string) => (href && href !== "#" ? href : undefined);
 
 export function Projects() {
+  const groups: { id: string; colorVar: string; cat: string }[] = [
+    { id: "research-projects", colorVar: "var(--fam-materials)", cat: "Research" },
+    { id: "hardware", colorVar: "var(--fam-vision)", cat: "Hardware" },
+    { id: "software", colorVar: "var(--fam-software)", cat: "Software" },
+  ];
   return (
-    <section id="projects">
-      <h2 className="mb-4 border-b border-rule pb-2 text-xl">Projects</h2>
-      <div className="space-y-6">
-        {projects.map((project) => {
-          const github =
-            project.github && project.github !== "#" ? project.github : undefined;
-          const live =
-            project.live && project.live !== "#" ? project.live : undefined;
-          return (
-            <div key={project.id}>
-              <p className="font-semibold">{project.title}</p>
-              {(github || live) && (
-                <p className="text-muted">
-                  {github && (
-                    <a href={github} target="_blank" rel="noopener noreferrer">
-                      GitHub ↗
-                    </a>
-                  )}
-                  {github && live && "  ·  "}
-                  {live && (
-                    <a href={live} target="_blank" rel="noopener noreferrer">
-                      Live ↗
-                    </a>
-                  )}
-                </p>
-              )}
-              <p className="mt-1">{project.description}</p>
-              <p className="mt-1 text-sm text-muted">{project.tech.join(" · ")}</p>
-            </div>
-          );
-        })}
-      </div>
+    <section id="projects" className="sec">
+      <SectionHead num="05" title="Projects" />
+      <SpineList
+        segments={groups.map((g) => ({
+          id: g.id,
+          colorVar: g.colorVar,
+          children: projects
+            .filter((p) => p.category === g.cat)
+            .map((p) => {
+              const gh = real(p.github);
+              const live = real(p.live);
+              return (
+                <Entry
+                  key={p.id}
+                  element={ELEMENT_OF[p.id]}
+                  meta={
+                    <>
+                      {p.category}
+                      {(gh || live) && (
+                        <span className="entry-links">
+                          {live && (
+                            <a href={live} target="_blank" rel="noopener noreferrer">
+                              Live ↗
+                            </a>
+                          )}
+                          {gh && (
+                            <a href={gh} target="_blank" rel="noopener noreferrer">
+                              Code ↗
+                            </a>
+                          )}
+                        </span>
+                      )}
+                    </>
+                  }
+                  title={p.title}
+                  body={<p>{p.description}</p>}
+                  tags={p.tech}
+                />
+              );
+            }),
+        }))}
+      />
     </section>
   );
 }

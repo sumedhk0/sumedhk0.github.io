@@ -1,24 +1,44 @@
-import { education } from "@/data/education";
+import { education as e } from "@/data/education";
+import { SectionHead } from "@/components/home/section-head";
+import { Entry } from "@/components/home/entry";
+import { SpineList } from "@/components/spine/spine-list";
 
 export function Education() {
-  const e = education;
   return (
-    <section id="education">
-      <h2 className="mb-4 border-b border-rule pb-2 text-xl">Education</h2>
-      <div className="flex justify-between gap-4">
-        <p className="font-semibold">{e.school}</p>
-        <p className="whitespace-nowrap text-muted">{e.period}</p>
-      </div>
-      <p>{e.degree}</p>
-      <p className="text-muted">
-        Minors: {e.minors.join("; ")} · GPA: {e.gpa}
-      </p>
-      <p className="mt-3">
-        <span className="text-muted">Honors:</span> {e.honors.join(", ")}
-      </p>
-      <p>
-        <span className="text-muted">Coursework:</span> {e.coursework.join(", ")}
-      </p>
+    <section id="education" className="sec">
+      <SectionHead num="06" title="Education" />
+      <SpineList
+        segments={[
+          {
+            id: "education",
+            colorVar: "var(--fam-optimization)",
+            children: (
+              <Entry
+                meta={
+                  <>
+                    {e.period}
+                    <br />
+                    GPA {e.gpa}
+                  </>
+                }
+                title={e.school}
+                body={
+                  <>
+                    <p>{e.degree}</p>
+                    <p className="text-muted">Minors: {e.minors.join("; ")}</p>
+                    <p>
+                      <span className="text-muted">Honors:</span> {e.honors.join(", ")}
+                    </p>
+                    <p>
+                      <span className="text-muted">Coursework:</span> {e.coursework.join(", ")}
+                    </p>
+                  </>
+                }
+              />
+            ),
+          },
+        ]}
+      />
     </section>
   );
 }

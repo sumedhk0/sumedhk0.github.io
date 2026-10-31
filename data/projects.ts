@@ -11,15 +11,6 @@ export const projects: Project[] = [
     github: "https://github.com/sumedhk0/POLYT5-RLVR",
   },
   {
-    id: "polyuma",
-    title: "PolyUMA — Semiconducting Polymer Property Predictor",
-    description:
-      "Graph neural network materials-property model (inspired by Meta's eSEN) trained on 6M+ OPoly26 datapoints to learn structure–property relationships in semiconducting polymers, force fields, and interatomic potentials. Built a physics-informed molecular representation pipeline (backbone planarity, π–π stacking, chain rigidity) and an iterative self-refinement training loop with domain-seeded anchoring. Submitted to the Adaptation Autoscientist Challenge.",
-    tech: ["Python", "PyTorch", "Graph Neural Networks", "CUDA"],
-    category: "Software",
-    github: "#",
-  },
-  {
     id: "panoptic-pigskin",
     title: "Panoptic Pigskin — NFL 4D Gaussian Splatting",
     description:
