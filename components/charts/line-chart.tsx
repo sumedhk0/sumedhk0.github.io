@@ -40,6 +40,7 @@ export function LineChart({ series, xLog, yLog, xLabel, yLabel, ariaLabel }: Lin
   const xt = xLog ? logTicks(xd[0], xd[1]) : niceTicks(xd[0], xd[1]);
   const yt = yLog ? logTicks(yd[0], yd[1]) : niceTicks(yd[0], yd[1]);
   let dashIdx = 0;
+  let oomIdx = 0;
 
   return (
     <svg className="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={ariaLabel}>
@@ -71,9 +72,12 @@ export function LineChart({ series, xLog, yLog, xLabel, yLabel, ariaLabel }: Lin
               <circle key={a} className={s.highlight ? "chart-pt hl" : "chart-pt"} cx={x(a)} cy={y(b)} r={3.5} />
             ))}
             {s.oomAfter && (
-              <text className="chart-oom" x={x(s.oomAfter)} y={y(last[1]) + 4} textAnchor="middle">
-                × OOM
-              </text>
+              <g>
+                <line className="chart-ref" x1={x(s.oomAfter)} x2={x(s.oomAfter)} y1={H - M.b} y2={H - M.b - 10} />
+                <text className="chart-oom" x={x(s.oomAfter)} y={H - M.b - 14 - 13 * oomIdx++} textAnchor="middle">
+                  × {s.name} OOM
+                </text>
+              </g>
             )}
             <text className={s.highlight ? "chart-series hl" : "chart-series"} x={x(last[0]) + 6} y={y(last[1]) - 8}>
               {s.name}

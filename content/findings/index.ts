@@ -1,8 +1,9 @@
 import type { Findings } from "./types";
 import { as, li } from "./witness";
+import { pf, pt, ps } from "./materials";
 import { PLACEHOLDERS } from "./placeholders";
 
-const ALL: Findings[] = [...PLACEHOLDERS, as, li];
+const ALL: Findings[] = [pf, pt, ps, ...PLACEHOLDERS, as, li];
 const BY_SLUG = new Map(ALL.map((f) => [f.slug, f]));
 
 export function getFindings(slug: string): Findings | undefined {
