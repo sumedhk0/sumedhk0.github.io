@@ -55,7 +55,7 @@ describe("page kinds and links", () => {
     expect(bySlug("li").kind).not.toBe("full");
   });
   test("projects with real material get full pages", () => {
-    for (const s of ["pf", "pt", "pp", "ps", "gs", "rb", "gt"]) expect(bySlug(s).kind, s).toBe("full");
+    for (const s of ["pf", "pt", "pp", "ps", "gs", "rb", "gt", "cc"]) expect(bySlug(s).kind, s).toBe("full");
   });
 });
 

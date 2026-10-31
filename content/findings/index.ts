@@ -2,8 +2,9 @@ import type { Findings } from "./types";
 import { as, li } from "./witness";
 import { pf, pt, ps } from "./materials";
 import { pp, gs, rb, gt } from "./builds";
+import { cc } from "./cheme-cube";
 
-const ALL: Findings[] = [pf, pt, ps, pp, gs, rb, gt, as, li];
+const ALL: Findings[] = [pf, pt, ps, pp, gs, rb, gt, cc, as, li];
 const BY_SLUG = new Map(ALL.map((f) => [f.slug, f]));
 
 export function getFindings(slug: string): Findings | undefined {

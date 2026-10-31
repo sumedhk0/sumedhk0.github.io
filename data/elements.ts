@@ -81,7 +81,7 @@ export const ELEMENTS: ElementRecord[] = [
     ],
   },
   {
-    slug: "cc", symbol: "Cc", name: "ChemE Cube DAC reactor", family: "optimization", start: "2025-08", kind: "card",
+    slug: "cc", symbol: "Cc", name: "ChemE Cube DAC reactor", family: "optimization", start: "2025-08", kind: "full",
     oneLiner: "Bayesian-optimized DAC reactor; 75% ambient CO₂ reduction",
     tech: ["Bayesian optimization", "CAD", "CNC"],
     links: [],
