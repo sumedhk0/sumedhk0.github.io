@@ -84,7 +84,7 @@ export const gs: Findings = {
       alt: "ESP32 development board on a breadboard wired to motor drivers.",
       width: 1215,
       height: 1620,
-      caption: "Firmware bench: C++ on the ESP32 parses 8-byte serial frames from the PC and sets motor PWM at 1 kHz.",
+      caption: "Firmware bench: C++ on the ESP32 reads a sync byte and eight motor intensities per serial frame from the PC and sets motor PWM at 1 kHz.",
     },
   ],
   steps: [
@@ -122,7 +122,7 @@ export const rb: Findings = {
       alt: "SolidWorks render of the four-slot beacon carousel.",
       width: 1050,
       height: 1038,
-      caption: "SolidWorks design of the 3D-printed beacon carousel, which rotates to drop one beacon per corner.",
+      caption: "SolidWorks design of the beacon carousel, which rotates to drop one beacon per corner.",
     },
   ],
   steps: [

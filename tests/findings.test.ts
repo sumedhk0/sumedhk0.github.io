@@ -86,3 +86,34 @@ describe("Task 9 pages", () => {
     }
   });
 });
+
+describe("final review fixes", () => {
+  test("Panoptic Pigskin links the Film Room and the report", async () => {
+    const { ELEMENTS } = await import("@/data/elements");
+    const labels = ELEMENTS.find((e) => e.slug === "pp")!.links.map((l) => l.href);
+    expect(labels).toContain("https://panopticpigskin.tech/playground");
+    expect(labels).toContain("https://panopticpigskin.tech/report");
+  });
+  test("GameSense and Robotech link their demo videos", async () => {
+    const { ELEMENTS } = await import("@/data/elements");
+    const href = (s: string) => ELEMENTS.find((e) => e.slug === s)!.links.map((l) => l.href);
+    expect(href("gs")).toContain("https://www.youtube.com/watch?v=MPyTruaT-h8");
+    expect(href("rb")).toContain("https://www.youtube.com/watch?v=cWmjeuB-yqk");
+  });
+  test("PolyT5 lead scopes the 79% to the validity arm", () => {
+    expect(getFindings("pt")!.lead).toMatch(/up to 79%/);
+  });
+  test("PolyFrameNet speed caption does not imply Allegro had the same L40S budget", () => {
+    const fig = getFindings("pf")!.figures.find((f) => f.kind === "chart" && f.chartId === "pf-speed")!;
+    expect(fig.caption).toMatch(/PolyFrameNet and MACE/);
+  });
+  test("no unverified build details", () => {
+    expect(JSON.stringify(getFindings("rb"))).not.toMatch(/3D-printed beacon carousel/);
+    expect(JSON.stringify(getFindings("gs"))).not.toMatch(/8-byte/);
+  });
+  test("phones keep chart text readable and anchor jumps clear the sticky index", () => {
+    const css = fs.readFileSync(path.resolve(__dirname, "../app/globals.css"), "utf8");
+    expect(css).toMatch(/\.fig-body \.chart\s*\{\s*min-width: 520px;/);
+    expect(css).toMatch(/scroll-margin-top: 56px/);
+  });
+});

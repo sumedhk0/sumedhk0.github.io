@@ -20,7 +20,7 @@ export const pf: Findings = {
     {
       kind: "chart",
       chartId: "pf-speed",
-      caption: "Time per MD step on one L40S after 90 minutes of training each. PolyFrameNet is 2.55× faster than MACE at 976 atoms and 5.51× faster at 7,808, and still runs at 26,352.",
+      caption: "Time per MD step on one L40S (PolyFrameNet and MACE each trained 90 minutes). PolyFrameNet is 2.55× faster than MACE at 976 atoms and 5.51× faster at 7,808, and still runs at 26,352.",
     },
     {
       kind: "chart",
@@ -47,7 +47,7 @@ export const pf: Findings = {
 export const pt: Findings = {
   slug: "pt",
   dates: "August – September 2026",
-  lead: "I rebuilt the Ramprasad Lab's PolyT5 from scratch, a 7.46M-parameter T5 pretrained on 92.3M polymers, and matched the paper's accuracy band (Tg RMSE 44.45 vs 40.82 K). Post-training it with GRPO against chemistry-verifiable rewards cut invalid polymer generations by 79%, and supervised replay then restored 99% of the target-Tg control that the rewards had erased. A regression head cut Tg prediction error 5.2%.",
+  lead: "I rebuilt the Ramprasad Lab's PolyT5 from scratch, a 7.46M-parameter T5 pretrained on 92.3M polymers, and matched the paper's accuracy band (Tg RMSE 44.45 vs 40.82 K). Post-training it with GRPO against chemistry-verifiable rewards cut invalid polymer generations by up to 79%, and supervised replay then restored 99% of the target-Tg control that the rewards had erased. A regression head cut Tg prediction error 5.2%.",
   figures: [
     {
       kind: "chart",

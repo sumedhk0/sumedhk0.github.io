@@ -5,13 +5,14 @@ interface CellProps {
   el: PlacedElement;
   colour: string;
   active: boolean;
+  pinned: boolean;
   onActivate: () => void;
   onPin: () => void;
   register: (node: HTMLElement | null) => void;
 }
 
 /** One element cell. Links to its findings page when it has one, otherwise a button that pins the panel. */
-export function Cell({ el, colour, active, onActivate, onPin, register }: CellProps) {
+export function Cell({ el, colour, active, pinned, onActivate, onPin, register }: CellProps) {
   // Starts with the text a sighted user sees on the smallest screens (number, symbol).
   const label = `${el.number} ${el.symbol} ${el.name}, element ${el.number}, ${FAMILIES[el.family].label}`;
   const body = (
@@ -43,7 +44,7 @@ export function Cell({ el, colour, active, onActivate, onPin, register }: CellPr
     );
   }
   return (
-    <button {...common} type="button" ref={register} aria-pressed={active} onClick={onPin}>
+    <button {...common} type="button" ref={register} aria-pressed={pinned} onClick={onPin}>
       {body}
     </button>
   );

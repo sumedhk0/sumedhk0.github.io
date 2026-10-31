@@ -370,6 +370,9 @@
     .drawing-index .di-head {
       display: none;
     }
+    .sec {
+      scroll-margin-top: 56px;
+    }
     .drawing-index a {
       border-top: 0;
       border-left: 1px solid var(--rule);
@@ -559,6 +562,14 @@
   }
   .pager-next {
     text-align: right;
+  }
+  @media (max-width: 600px) {
+    .fig-body {
+      overflow-x: auto;
+    }
+    .fig-body .chart {
+      min-width: 520px;
+    }
   }
   @media (max-width: 720px) {
     .find-head {

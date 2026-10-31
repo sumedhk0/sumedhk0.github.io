@@ -64,6 +64,7 @@ export function TableClient({ elements, initial }: { elements: PlacedElement[]; 
               el={el}
               colour={colourOf(el)}
               active={shown.slug === el.slug}
+              pinned={pinned === el.slug}
               onActivate={() => setActive(el.slug)}
               onPin={() => setPinned((p) => (p === el.slug ? null : el.slug))}
               register={(node) => {

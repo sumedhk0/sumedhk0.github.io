@@ -40,6 +40,8 @@ export const ELEMENTS: ElementRecord[] = [
     tech: ["YOLOv8", "SMPL-X", "OpenCV", "Gaussian splatting"],
     links: [
       { label: "Live", href: "https://panopticpigskin.tech" },
+      { label: "Film Room", href: "https://panopticpigskin.tech/playground" },
+      { label: "Report", href: "https://panopticpigskin.tech/report" },
       { label: "GitHub", href: "https://github.com/sumedhk0/PanopticPigskin" },
     ],
   },
@@ -55,6 +57,7 @@ export const ELEMENTS: ElementRecord[] = [
     tech: ["ESP32", "C++", "IMU", "Bluetooth LE"],
     links: [
       { label: "Devpost", href: "https://devpost.com/software/gamesense-78fswv" },
+      { label: "Video", href: "https://www.youtube.com/watch?v=MPyTruaT-h8" },
       { label: "GitHub", href: "https://github.com/sumedhk0/Game-Sense-TechHackValley" },
     ],
   },
@@ -64,6 +67,7 @@ export const ELEMENTS: ElementRecord[] = [
     tech: ["YOLO11", "Raspberry Pi", "SolidWorks"],
     links: [
       { label: "Devpost", href: "https://devpost.com/software/buzzinga-robotech-submission" },
+      { label: "Video", href: "https://www.youtube.com/watch?v=cWmjeuB-yqk" },
       { label: "GitHub", href: "https://github.com/wschotte/buzzinga-robotech-2026" },
     ],
   },
