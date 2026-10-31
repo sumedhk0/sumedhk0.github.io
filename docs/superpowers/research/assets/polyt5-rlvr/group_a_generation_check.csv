@@ -1,0 +1,6 @@
+arm,pv,pv_vs_control,tp,tp_vs_control
+control (frozen generator),0.61,0,0.6164,0
+seed0 A5,0.6153,0.005,0.4561,-0.16
+seed0 A6,0.5893,-0.021,0.4457,-0.171
+seed1 A5,0.5707,-0.039,0.4346,-0.182
+seed1 A6,0.5807,-0.029,0.4856,-0.131

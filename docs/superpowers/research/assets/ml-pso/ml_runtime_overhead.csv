@@ -1,0 +1,4 @@
+function,baseline_avg_chunk_h,ml_avg_chunk_h,ml_overhead_pct
+sphere,2.08,2.33,11.9
+rastrigin,3.8,4.66,22.6
+ackley,4.02,4.16,3.5

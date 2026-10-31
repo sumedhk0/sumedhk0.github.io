@@ -1,0 +1,6 @@
+arm,diversity_term,reward_start,reward_end,unique_fraction_start,unique_fraction_end
+accuracy,no,0.214,0.459,0.951,0.535
+novelty,no,0.578,0.949,0.949,0.516
+synthesisability,no,0.633,0.982,0.951,0.221
+constraint,no,0.537,0.955,0.949,0.539
+composite,yes,0.625,0.948,0.949,0.98

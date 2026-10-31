@@ -1,0 +1,5 @@
+camera,label_source,n_heldout,pck10_pretrained_pct,pck10_ft2_pct,median_px_pretrained,median_px_ft2
+endzone,fit_cross,2435,0.7,66.1,20.4,7.3
+endzone,fit_self,2085,83.2,92.3,6.7,
+sideline,fit_cross,277,50.7,87.5,9.6,4.1
+sideline,fit_self,6164,97.0,96.9,2.7,

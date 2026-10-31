@@ -1,0 +1,3 @@
+metric,before_m,after_m
+median distance to two-camera truth,0.20,0.05
+p90 distance to two-camera truth,0.43,0.15

@@ -1,0 +1,9 @@
+model,split,n_frames,e_mae_meV_atom,e_rmse_meV_atom,f_mae_meV_A,f_rmse_meV_A,source
+PolyFrameNet v2,hydrocarbon test,782,1.185,1.765,43.39,91.64,docs/results/l40s/eval_l40s/v2_test.json
+PolyFrameNet v2,PE test,77,0.425,0.542,18.53,26.38,docs/results/l40s/eval_l40s/v2_pe.json
+MACE,hydrocarbon test,782,0.761,1.189,19.66,33.33,docs/results/l40s/eval_l40s/mace_test.json
+MACE,PE test,77,0.393,0.472,10.65,15.39,docs/results/l40s/eval_l40s/mace_pe.json
+Allegro,hydrocarbon test,782,1.501,2.040,47.21,94.97,docs/results/l40s/eval_l40s/allegro_test.json
+Allegro,PE test,77,0.687,0.856,23.58,32.98,docs/results/l40s/eval_l40s/allegro_pe.json
+PolyFrameNet v1 (PE-only),PE test,77,0.327,0.414,13.71,20.84,docs/results/accuracy_test.json
+MACE (PE-only; laptop RTX 4080),PE test,77,0.280,0.333,13.73,19.65,docs/results/accuracy_test.json

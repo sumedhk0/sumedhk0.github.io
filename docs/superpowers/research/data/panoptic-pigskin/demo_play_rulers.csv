@@ -1,0 +1,9 @@
+ruler,value,unit,real_player_reference
+census mean |drawn-11| per team summed,0.00,bodies/frame,0
+frames exactly 11v11 (live),213/213,frames,
+frames exactly 11v11 (clip),390/401,frames,
+steps >0.25 m between frames,0,count,<0.20 m/frame
+hops >0.15 m beyond neighbours median,0,count,0
+surges pelvis accel >25 m/s^2,4.3,% body-frames,sprint start ~10 m/s^2; hard tackle stop 25-30
+joint jitter p50,0.016,m/frame^2,0.01-0.02
+joint jitter p90,0.059,m/frame^2,0.05 = visible twitch

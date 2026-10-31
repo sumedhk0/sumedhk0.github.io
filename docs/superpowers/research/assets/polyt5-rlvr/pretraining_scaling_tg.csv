@@ -1,0 +1,6 @@
+arm,model,pretraining_corpus,corpus_size_M,mae_K,mae_sd,rmse_K,rmse_sd,r2,r2_sd,pearson_r,pearson_sd
+random init,small,none,0,46.24,2.03,62.39,2.28,0.695,0.02,0.853,0.007
+pretrained,small,PI1M,0.89,34.65,1.15,49.48,1.5,0.808,0.012,0.907,0.003
+pretrained,medium,polyOne,9.2,31.05,1.27,45.85,1.78,0.836,0.012,0.917,0.006
+pretrained,medium,polyOne,92.3,28.67,0.76,44.45,2.52,0.845,0.018,0.923,0.008
+paper reports,medium,withheld,100.1,,,40.82,1.33,0.86,,0.93,0.01

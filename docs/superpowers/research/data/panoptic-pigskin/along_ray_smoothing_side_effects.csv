@@ -1,0 +1,10 @@
+metric,before,after
+surges (body-frames),396,127
+steps >0.25 m/frame full clip,36,20
+steps >0.25 m/frame live,2,0
+census live (|KC-11|+|BAL-11| mean),0.13,0.04
+planted feet share pct,14,34
+joint jitter p99 (m/frame^2),0.169,0.162
+endzone film joints over 40 px pct,8.0,5.0
+endzone film joint p99 px,113,87
+sideline film joints over 20 px pct,9.3,10.3

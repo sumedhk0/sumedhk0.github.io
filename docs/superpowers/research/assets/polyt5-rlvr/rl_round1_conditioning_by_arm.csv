@@ -1,0 +1,9 @@
+arm,own_metric,own_metric_value,tp_rate,auditor_mae_K,mean_tg_produced_K
+baseline (Arm B),,,0.693,36.6,376
+accuracy (retired),Tg closeness,,0.869,21.8,437
+synthesisability,SA pass,0.998,0.489,67.8,282
+composite,composite,0.916,0.112,149.8,251
+novelty,novelty,0.969,0.072,152.6,273
+constraint,constraint,0.985,0.06,153.1,256
+validity,PV,0.901,0.047,150.4,248
+control,none,,0.693,36.3,375

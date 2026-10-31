@@ -1,0 +1,5 @@
+version,surge_body_frames,live_body_frames,surge_share_pct,note,source
+v115/v116 isotropic 9-frame xy smoothing,396,2295,17.3,"pelvis accel >25 m/s^2 (±4-frame centred diff), live window",NFLGSPLAT docs/HANDOFF.md:7416-7418; PanopticPigskin nfl_gsplat/render/timeline.py:296-303
+v117a along-ray 31-frame + across 9-frame + feet anchor,127,2295,5.5,"share computed here as 127/2295 (denominator assumed unchanged)",PanopticPigskin nfl_gsplat/render/timeline.py:301-302; HANDOFF.md:7440
+v117b,,,4.8,later identity fixes,NFLGSPLAT docs/HANDOFF.md:7644
+v122 shipped (README),,,4.3,final demo play,PanopticPigskin README.md:72; HANDOFF.md:7623

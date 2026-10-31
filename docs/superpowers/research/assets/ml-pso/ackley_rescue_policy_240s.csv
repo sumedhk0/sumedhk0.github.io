@@ -1,0 +1,9 @@
+variant,policy,median_final,hit_rate_le_1.0,hit_rate_le_0.5
+B,none,0.657,0.941,0.059
+B,learned,0.647,0.961,0.118
+B,random,0.6,0.922,0.255
+B,heuristic_plateau,0.667,0.98,0.098
+C1,none,0.805,0.745,0.039
+C1,learned,0.782,0.863,0.059
+C1,random,0.613,0.941,0.235
+C1,heuristic_plateau,0.826,0.686,0.039

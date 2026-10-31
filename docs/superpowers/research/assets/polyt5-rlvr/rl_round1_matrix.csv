@@ -1,0 +1,10 @@
+metric,arm_a_baseline,arm_b_baseline,control_random,validity,accuracy
+pv_rate,0.521,0.526,0.515,0.901,0.284
+sv_rate,0.999,1.0,0.999,1.0,0.999
+duplicate_rate,0.092,0.121,0.129,0.069,0.635
+sr_rate,0.376,0.451,0.452,0.779,0.763
+novelty_rate,0.569,0.597,0.594,0.963,0.599
+near_copy_fraction,0.223,0.229,0.235,0.585,0.456
+mean_length,63.0,63.2,62.9,130.7,59.2
+auditor_tg_mae_K,34.7,36.6,36.3,150.4,21.8
+auditor_tp_rate,0.716,0.693,0.693,0.047,0.869

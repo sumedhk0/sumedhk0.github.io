@@ -1,0 +1,23 @@
+team,number,name,role,grade,both_cameras_live_pct
+KC,15,Patrick Mahomes,QB,1.0,93
+KC,83,Noah Gray,TE,1.0,77
+KC,87,Travis Kelce,TE,0.5,23
+KC,10,Isiah Pacheco,RB,0.5,sideline-only
+KC,B,Receiver B,WR,0,sideline-only
+KC,A,Receiver A,WR,0,14
+KC,76,Kingsley Suamataia,LT,0.5,90
+KC,62,Joe Thuney,LG,0.5,79
+KC,52,Creed Humphrey,C,0.5,37
+KC,65,Trey Smith,RG,0.5,76
+KC,74,Jawaan Taylor,RT,0.5,61
+BAL,14,Kyle Hamilton,S,1.0,49
+BAL,0,Roquan Smith,LB,-0.5,49
+BAL,39,Eddie Jackson,S,0.5,48
+BAL,CB,Cornerback (unread),CB,0.5,sideline-only
+BAL,40,Malik Harrison,LB,0,69
+BAL,32,Marcus Williams,S,0,100
+BAL,21,Brandon Stephens,CB,0,24
+BAL,92,Nnamdi Madubuike,DL,0,23
+BAL,98,Travis Jones,DL,0,16
+BAL,99,Odafe Oweh,EDGE,0,74
+BAL,90,David Ojabo,EDGE,0,16
