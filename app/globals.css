@@ -13,7 +13,9 @@
   --fam-optimization: #2f7d63;
   --fam-vision: #8a5aa8;
   --fam-chemistry: #93680f;
-  --fam-software: #5f6872;
+  --fam-hardware: #1d6f80;
+  --fam-data: #5f6872;
+  --fam-apps: #a8456e;
   color-scheme: light;
 }
 
@@ -30,7 +32,9 @@
     --fam-optimization: #2a7d62;
     --fam-vision: #895daa;
     --fam-chemistry: #916710;
-    --fam-software: #6c7684;
+    --fam-hardware: #20788a;
+    --fam-data: #6c7684;
+    --fam-apps: #ae4c75;
     color-scheme: dark;
   }
 }

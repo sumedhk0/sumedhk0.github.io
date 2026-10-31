@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { ELEMENTS } from "@/data/elements";
-import { neighbor, placeElements } from "@/lib/elements";
+import { GROUP_ORDER, neighbor, placeElements } from "@/lib/elements";
 
 const placed = placeElements(ELEMENTS);
 const bySlug = (s: string) => placed.find((e) => e.slug === s)!;
@@ -20,16 +20,36 @@ describe("element roster", () => {
   });
 });
 
-describe("placeElements numbering (newest = 1)", () => {
-  test("element 1 is the most recent work", () =>
-    expect(placed[0].start).toBe(ELEMENTS.map((e) => e.start).sort().at(-1)));
-  test("element 18 is the oldest work, Fluorinated MOFs", () => expect(placed[17].name).toBe("Fluorinated MOFs"));
-  test("start dates never increase with number", () => {
-    for (let i = 1; i < placed.length; i++) expect(placed[i].start <= placed[i - 1].start, placed[i].slug).toBe(true);
+describe("groups (columns = field)", () => {
+  test("there are 8 groups, one per column, in GROUP_ORDER", () => {
+    expect(GROUP_ORDER).toHaveLength(8);
+    for (const e of placed) expect(e.col, e.slug).toBe(GROUP_ORDER.indexOf(e.family) + 1);
   });
-  test("ties on start date break by name", () =>
-    expect(bySlug("cc").number).toBeLessThan(bySlug("lg").number));
-  test("numbers run 1..18", () => expect(placed.map((e) => e.number)).toEqual([...Array(18)].map((_, i) => i + 1)));
+  test("every group has at least 2 elements", () => {
+    for (const g of GROUP_ORDER) expect(placed.filter((e) => e.family === g).length, g).toBeGreaterThanOrEqual(2);
+  });
+  test("vision and hardware are separate groups", () => {
+    expect(bySlug("pp").family).toBe("vision");
+    expect(bySlug("gs").family).toBe("hardware");
+  });
+  test("newest work sits at the top of each group", () => {
+    for (const g of GROUP_ORDER) {
+      const col = placed.filter((e) => e.family === g).sort((a, b) => a.row - b.row);
+      for (let i = 1; i < col.length; i++) expect(col[i].start <= col[i - 1].start, col[i].slug).toBe(true);
+    }
+  });
+});
+
+describe("placeElements numbering (reading order, like a real table)", () => {
+  test("numbers run 1..18", () =>
+    expect([...placed].map((e) => e.number).sort((a, b) => a - b)).toEqual([...Array(18)].map((_, i) => i + 1)));
+  test("numbers increase left to right, then top to bottom", () => {
+    const byNum = [...placed].sort((a, b) => a.number - b.number);
+    for (let i = 1; i < byNum.length; i++) {
+      const [p, c] = [byNum[i - 1], byNum[i]];
+      expect(c.row > p.row || (c.row === p.row && c.col > p.col), c.slug).toBe(true);
+    }
+  });
   test("year comes from the start date", () => expect(bySlug("mf").year).toBe(2024));
 });
 

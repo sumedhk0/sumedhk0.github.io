@@ -2,7 +2,15 @@
 // custom properties; tests/theme.test.ts fails if the two drift or if any
 // pairing drops below WCAG AA.
 
-export type Family = "materials" | "safety" | "optimization" | "vision" | "chemistry" | "software";
+export type Family =
+  | "materials"
+  | "chemistry"
+  | "optimization"
+  | "safety"
+  | "vision"
+  | "hardware"
+  | "data"
+  | "apps";
 
 export interface Palette {
   paper: string;
@@ -20,13 +28,17 @@ export const PALETTE: { light: Palette; dark: Palette } = {
 
 // Dark values sit in a narrow luminance band: dark enough for white symbol
 // text on the hover fill, light enough to read as a bar on dark paper.
-export const FAMILIES: Record<Family, { label: string; light: string; dark: string }> = {
-  materials: { label: "ML for materials", light: "#2f62a8", dark: "#4370b8" },
-  safety: { label: "LLM safety", light: "#b04a35", dark: "#b5513c" },
-  optimization: { label: "Optimization", light: "#2f7d63", dark: "#2a7d62" },
-  vision: { label: "Vision & hardware", light: "#8a5aa8", dark: "#895daa" },
-  chemistry: { label: "Chemistry", light: "#93680f", dark: "#916710" },
-  software: { label: "Software", light: "#5f6872", dark: "#6c7684" },
+// Key order is the table's column order (group 1 → 18), lab science to software.
+// `short` is the group header above each column.
+export const FAMILIES: Record<Family, { label: string; short: string; light: string; dark: string }> = {
+  materials: { label: "ML for materials", short: "Materials", light: "#2f62a8", dark: "#4370b8" },
+  chemistry: { label: "Chemistry", short: "Chemistry", light: "#93680f", dark: "#916710" },
+  optimization: { label: "Optimization", short: "Optimization", light: "#2f7d63", dark: "#2a7d62" },
+  safety: { label: "LLM safety", short: "Safety", light: "#b04a35", dark: "#b5513c" },
+  vision: { label: "Computer vision", short: "Vision", light: "#8a5aa8", dark: "#895daa" },
+  hardware: { label: "Hardware", short: "Hardware", light: "#1d6f80", dark: "#20788a" },
+  data: { label: "Data tools", short: "Data", light: "#5f6872", dark: "#6c7684" },
+  apps: { label: "Web apps", short: "Apps", light: "#a8456e", dark: "#ae4c75" },
 };
 
 function luminance(hex: string): number {

@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import type { Family, PlacedElement } from "@/lib/types";
 import { FAMILIES } from "@/lib/theme";
-import { neighbor, type ArrowKey } from "@/lib/elements";
+import { GROUP_ORDER, neighbor, type ArrowKey } from "@/lib/elements";
 import { Cell } from "./cell";
 import "./table.css";
 
@@ -11,11 +11,13 @@ type Mode = "field" | "year";
 
 // Year colouring reuses tested family tokens, so contrast is already proven.
 const YEAR_VAR: Record<number, string> = {
-  2024: "var(--fam-software)",
+  2024: "var(--fam-data)",
   2025: "var(--fam-optimization)",
   2026: "var(--fam-materials)",
 };
 const familyVar = (f: Family) => `var(--fam-${f})`;
+// Real main-group numbers (IUPAC), so the header reads like a periodic table's.
+const IUPAC_GROUP = [1, 2, 13, 14, 15, 16, 17, 18];
 
 export function TableClient({ elements, initial }: { elements: PlacedElement[]; initial: string }) {
   const [mode, setMode] = useState<Mode>("field");
@@ -24,6 +26,7 @@ export function TableClient({ elements, initial }: { elements: PlacedElement[]; 
   const refs = useRef(new Map<number, HTMLElement>());
 
   const colourOf = (el: PlacedElement) => (mode === "field" ? familyVar(el.family) : YEAR_VAR[el.year]);
+  const periods = [...Array(Math.max(...elements.map((e) => e.row)))].map((_, i) => i + 1);
   const shown = elements.find((e) => e.slug === (pinned ?? active)) ?? elements[0];
 
   function onKeyDown(e: React.KeyboardEvent) {
@@ -43,7 +46,7 @@ export function TableClient({ elements, initial }: { elements: PlacedElement[]; 
     <div className="pt-wrap">
       <div className="pt-main">
         <div className="pt-toolbar">
-          <p className="label">Atomic number = newest first · colour = {mode}</p>
+          <p className="label">Group = field · newest at the top · colour = {mode}</p>
           <div className="pt-toggle" role="group" aria-label="Colour cells by">
             {(["field", "year"] as Mode[]).map((m) => (
               <button key={m} type="button" aria-pressed={mode === m} onClick={() => setMode(m)}>
@@ -53,11 +56,20 @@ export function TableClient({ elements, initial }: { elements: PlacedElement[]; 
           </div>
         </div>
         <div className="pt-groups label" aria-hidden="true">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((g) => (
-            <span key={g}>{g}</span>
+          <span />
+          {GROUP_ORDER.map((f, i) => (
+            <span key={f} style={{ "--fam": familyVar(f) } as React.CSSProperties}>
+              <b>{IUPAC_GROUP[i]}</b>
+              <small>{FAMILIES[f].short}</small>
+            </span>
           ))}
         </div>
         <div className="pt-grid" onKeyDown={onKeyDown}>
+          {periods.map((p) => (
+            <span key={p} className="pt-period label" style={{ gridRow: p }} aria-hidden="true">
+              {p}
+            </span>
+          ))}
           {elements.map((el) => (
             <Cell
               key={el.slug}

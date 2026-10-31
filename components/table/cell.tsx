@@ -27,7 +27,8 @@ export function Cell({ el, colour, active, pinned, onActivate, onPin, register }
     className: "cell",
     "aria-label": label,
     "data-active": active || undefined,
-    style: { gridColumn: el.col, gridRow: el.row, "--fam": colour } as React.CSSProperties,
+    // Column 1 of the grid holds the period numbers.
+    style: { gridColumn: el.col + 1, gridRow: el.row, "--fam": colour } as React.CSSProperties,
     onMouseEnter: onActivate,
     onFocus: onActivate,
   };

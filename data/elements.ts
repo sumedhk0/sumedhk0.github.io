@@ -2,7 +2,8 @@ import { ElementRecord } from "@/lib/types";
 
 // The periodic table of work. Start dates follow the spec's precedence:
 // resume > experience periods > event date > repo creation month.
-// Numbers are assigned by lib/elements.ts (newest = 1), never by hand.
+// Columns are fields (lib/theme.ts FAMILIES order); numbers are assigned by
+// lib/elements.ts in reading order, never by hand.
 export const ELEMENTS: ElementRecord[] = [
   {
     slug: "pf", symbol: "Pf", name: "PolyFrameNet", family: "materials", start: "2026-08", kind: "full",
@@ -52,7 +53,7 @@ export const ELEMENTS: ElementRecord[] = [
     links: [{ label: "GitHub", href: "https://github.com/sumedhk0/ML-Assisted-Particle-Swarm-Optimization" }],
   },
   {
-    slug: "gs", symbol: "Gs", name: "GameSense", family: "vision", start: "2026-03", kind: "full",
+    slug: "gs", symbol: "Gs", name: "GameSense", family: "hardware", start: "2026-03", kind: "full",
     oneLiner: "Directional haptics for deaf gamers; TechHack Valley winner",
     tech: ["ESP32", "C++", "IMU", "Bluetooth LE"],
     links: [
@@ -62,7 +63,7 @@ export const ELEMENTS: ElementRecord[] = [
     ],
   },
   {
-    slug: "rb", symbol: "Rb", name: "Robotech debris robot", family: "vision", start: "2026-01", kind: "full",
+    slug: "rb", symbol: "Rb", name: "Robotech debris robot", family: "hardware", start: "2026-01", kind: "full",
     oneLiner: "Autonomous lunar-zone rover with on-board YOLO debris detection",
     tech: ["YOLO11", "Raspberry Pi", "SolidWorks"],
     links: [
@@ -72,7 +73,7 @@ export const ELEMENTS: ElementRecord[] = [
     ],
   },
   {
-    slug: "gt", symbol: "Gt", name: "GT Transfer Equivalencies", family: "software", start: "2026-04", kind: "full",
+    slug: "gt", symbol: "Gt", name: "GT Transfer Equivalencies", family: "data", start: "2026-04", kind: "full",
     oneLiner: "2,076 schools and 104,073 course mappings, refreshed nightly",
     tech: ["Python", "BeautifulSoup", "GitHub Actions"],
     links: [
@@ -105,7 +106,7 @@ export const ELEMENTS: ElementRecord[] = [
     links: [],
   },
   {
-    slug: "ar", symbol: "Ar", name: "Sports betting arbitrage", family: "software", start: "2025-11", kind: "card",
+    slug: "ar", symbol: "Ar", name: "Sports betting arbitrage", family: "data", start: "2025-11", kind: "card",
     oneLiner: "Live odds across sportsbooks turned into arbitrage bets",
     tech: ["Python", "REST APIs", "Docker"],
     links: [
@@ -114,7 +115,7 @@ export const ELEMENTS: ElementRecord[] = [
     ],
   },
   {
-    slug: "ef", symbol: "Ef", name: "EcoFlow", family: "software", start: "2026-02", kind: "card",
+    slug: "ef", symbol: "Ef", name: "EcoFlow", family: "apps", start: "2026-02", kind: "card",
     oneLiner: "Cradle-to-grave life-cycle analysis for Amazon products",
     tech: ["FastAPI", "Next.js", "Redis"],
     links: [
@@ -123,7 +124,7 @@ export const ELEMENTS: ElementRecord[] = [
     ],
   },
   {
-    slug: "rf", symbol: "Rf", name: "ResumeForge", family: "software", start: "2025-12", kind: "card",
+    slug: "rf", symbol: "Rf", name: "ResumeForge", family: "apps", start: "2025-12", kind: "card",
     oneLiner: "LLM resume tailoring to a job description, compiled to PDF",
     tech: ["FastAPI", "LaTeX", "LLMs"],
     links: [
@@ -132,7 +133,7 @@ export const ELEMENTS: ElementRecord[] = [
     ],
   },
   {
-    slug: "ga", symbol: "Ga", name: "GitHub Analyzer", family: "software", start: "2025-12", kind: "card",
+    slug: "ga", symbol: "Ga", name: "GitHub Analyzer", family: "apps", start: "2025-12", kind: "card",
     oneLiner: "LLM-rated code quality from a developer's commit history",
     tech: ["Python", "Flask", "GitHub API"],
     links: [

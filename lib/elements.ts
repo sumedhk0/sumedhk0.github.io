@@ -1,22 +1,30 @@
-import { ElementRecord, PlacedElement } from "./types";
+import { FAMILIES } from "./theme";
+import { ElementRecord, Family, PlacedElement } from "./types";
 
-/** Cell position for element n in the period 1–3 main-group shape (2 + 8 + 8). */
-function cellFor(n: number): { col: number; row: number } {
-  if (n === 1) return { col: 1, row: 1 };
-  if (n === 2) return { col: 8, row: 1 };
-  if (n <= 10) return { col: n - 2, row: 2 };
-  return { col: n - 10, row: 3 };
-}
+/** Column order: each field is one group, like a column of the real table. */
+export const GROUP_ORDER = Object.keys(FAMILIES) as Family[];
 
-/** Number elements by start date (newest = 1, ties by name) and place them. */
+/**
+ * Place each element in its field's column, newest at the top. As in the real
+ * table, the outer groups (1 and 18) start in period 1 and the rest in period 2.
+ * Atomic numbers then run in reading order: left to right, top to bottom.
+ */
 export function placeElements(records: ElementRecord[]): PlacedElement[] {
-  return [...records]
-    .sort((a, b) => b.start.localeCompare(a.start) || a.name.localeCompare(b.name))
-    .map((r, i) => ({
+  const cells = GROUP_ORDER.flatMap((family, g) => {
+    const firstRow = g === 0 || g === GROUP_ORDER.length - 1 ? 1 : 2;
+    return records
+      .filter((r) => r.family === family)
+      .sort((a, b) => b.start.localeCompare(a.start) || a.name.localeCompare(b.name))
+      .map((r, i) => ({ r, col: g + 1, row: firstRow + i }));
+  });
+  return cells
+    .sort((a, b) => a.row - b.row || a.col - b.col)
+    .map(({ r, col, row }, i) => ({
       ...r,
       number: i + 1,
       year: Number(r.start.slice(0, 4)),
-      ...cellFor(i + 1),
+      col,
+      row,
       href: r.kind === "card" ? null : `/work/${r.slug}/`,
     }));
 }

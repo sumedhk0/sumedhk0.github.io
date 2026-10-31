@@ -9,8 +9,8 @@ const real = (href?: string) => (href && href !== "#" ? href : undefined);
 export function Projects() {
   const groups: { id: string; colorVar: string; cat: string }[] = [
     { id: "research-projects", colorVar: "var(--fam-materials)", cat: "Research" },
-    { id: "hardware", colorVar: "var(--fam-vision)", cat: "Hardware" },
-    { id: "software", colorVar: "var(--fam-software)", cat: "Software" },
+    { id: "hardware", colorVar: "var(--fam-hardware)", cat: "Hardware" },
+    { id: "software", colorVar: "var(--fam-data)", cat: "Software" },
   ];
   return (
     <section id="projects" className="sec">
