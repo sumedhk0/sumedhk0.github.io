@@ -64,4 +64,10 @@ assertContains("index.html", "AiApply", "home (off-table projects stay listed)")
 assertContains("index.html", "Sumedh_Kothari_Resume.pdf", "home (resume link)");
 assertNotContains("index.html", "Witness.ai", "home (resume spelling is Witness AI)");
 
+// Task 7 — findings pages exist for direct load / refresh on Pages
+const PAGES = ["pf", "pt", "ps", "pp", "gs", "rb", "gt", "as", "li"];
+for (const slug of PAGES) assertContains(`work/${slug}/index.html`, "Back to the table", `findings page ${slug}`);
+if (fs.existsSync(path.join(OUT, "work/ar"))) fail("findings: card element ar must not have a page");
+assertContains("work/pf/index.html", "view-transition-name:el-pf", "findings (expand target matches the table cell)");
+
 console.log("check-export: all assertions passed");
