@@ -20,8 +20,13 @@ describe("element roster", () => {
   });
 });
 
-describe("placeElements numbering (oldest = 1)", () => {
-  test("element 1 is the oldest work, Fluorinated MOFs", () => expect(placed[0].name).toBe("Fluorinated MOFs"));
+describe("placeElements numbering (newest = 1)", () => {
+  test("element 1 is the most recent work", () =>
+    expect(placed[0].start).toBe(ELEMENTS.map((e) => e.start).sort().at(-1)));
+  test("element 18 is the oldest work, Fluorinated MOFs", () => expect(placed[17].name).toBe("Fluorinated MOFs"));
+  test("start dates never increase with number", () => {
+    for (let i = 1; i < placed.length; i++) expect(placed[i].start <= placed[i - 1].start, placed[i].slug).toBe(true);
+  });
   test("ties on start date break by name", () =>
     expect(bySlug("cc").number).toBeLessThan(bySlug("lg").number));
   test("numbers run 1..18", () => expect(placed.map((e) => e.number)).toEqual([...Array(18)].map((_, i) => i + 1)));

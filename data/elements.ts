@@ -2,7 +2,7 @@ import { ElementRecord } from "@/lib/types";
 
 // The periodic table of work. Start dates follow the spec's precedence:
 // resume > experience periods > event date > repo creation month.
-// Numbers are assigned by lib/elements.ts (oldest = 1), never by hand.
+// Numbers are assigned by lib/elements.ts (newest = 1), never by hand.
 export const ELEMENTS: ElementRecord[] = [
   {
     slug: "pf", symbol: "Pf", name: "PolyFrameNet", family: "materials", start: "2026-08", kind: "full",

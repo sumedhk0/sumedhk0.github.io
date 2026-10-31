@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { ogCell } from "@/lib/og-cell";
 
 export const dynamic = "force-static";
 export const size = { width: 1200, height: 630 };
@@ -9,7 +10,7 @@ const NAME = "Sumedh Kothari";
 const TAGLINE = "ML for polymers and materials";
 const SUB = "Georgia Tech · Chemical & Biomolecular Engineering + CS";
 const URL = "sumedhk0.github.io";
-const CELL = { num: "17", year: "2026", sym: "Pf", label: "ML FOR MATERIALS" };
+const CELL = ogCell();
 
 const PAPER = "#f5f6f2";
 const INK = "#1c2433";

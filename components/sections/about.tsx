@@ -16,12 +16,12 @@ export function About() {
         <div className="prose-col">
           <p>
             I am a Georgia Tech engineering student working where machine learning meets chemistry. In the Ramprasad
-            Laboratory I build PolyFrameNet, a block-factored interatomic potential that runs polymer simulations faster
+            Laboratory I am building PolyFrameNet, a block-factored interatomic potential that runs polymer simulations faster
             and at larger scale than equivariant models. Before that, at Witness AI, I built an adversarial self-play
             framework for automated LLM jailbreak discovery.
           </p>
           <p>
-            I also work on reinforcement-learning post-training for polymer language models, surrogate-assisted
+            I have also worked on reinforcement-learning post-training for polymer language models, surrogate-assisted
             optimization, and 3D reconstruction of NFL plays from broadcast footage.
           </p>
           <p className="label about-focus">Focus · {FOCUS.join(" · ")}</p>

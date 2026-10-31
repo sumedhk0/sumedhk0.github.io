@@ -10,7 +10,7 @@ export function Hero() {
       <p className="label hero-eyebrow">Research notebook · ML for polymers and materials</p>
       <h1 className="hero-name">Sumedh Kothari</h1>
       <p className="hero-lede">
-        I build machine learning for chemistry: <em>fast interatomic potentials</em> for polymers,
+        I am building machine learning for chemistry: <em>fast interatomic potentials</em> for polymers,
         RL-tuned polymer language models, and adversarial tests for LLMs.
       </p>
       <p className="hero-sub">

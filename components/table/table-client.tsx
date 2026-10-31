@@ -43,7 +43,7 @@ export function TableClient({ elements, initial }: { elements: PlacedElement[]; 
     <div className="pt-wrap">
       <div className="pt-main">
         <div className="pt-toolbar">
-          <p className="label">Atomic number = order of start date · colour = {mode}</p>
+          <p className="label">Atomic number = newest first · colour = {mode}</p>
           <div className="pt-toggle" role="group" aria-label="Colour cells by">
             {(["field", "year"] as Mode[]).map((m) => (
               <button key={m} type="button" aria-pressed={mode === m} onClick={() => setMode(m)}>

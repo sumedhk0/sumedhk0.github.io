@@ -8,10 +8,10 @@ function cellFor(n: number): { col: number; row: number } {
   return { col: n - 10, row: 3 };
 }
 
-/** Number elements by start date (oldest = 1, ties by name) and place them. */
+/** Number elements by start date (newest = 1, ties by name) and place them. */
 export function placeElements(records: ElementRecord[]): PlacedElement[] {
   return [...records]
-    .sort((a, b) => a.start.localeCompare(b.start) || a.name.localeCompare(b.name))
+    .sort((a, b) => b.start.localeCompare(a.start) || a.name.localeCompare(b.name))
     .map((r, i) => ({
       ...r,
       number: i + 1,
