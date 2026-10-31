@@ -167,6 +167,7 @@
     max-width: 46ch;
   }
   .hero-lede em {
+    font-style: normal;
     color: var(--blueprint);
   }
   .hero-sub {

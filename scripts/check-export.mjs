@@ -3,6 +3,7 @@
 // These read raw HTML, so they also prove what a reader sees with JS disabled.
 import fs from "node:fs";
 import path from "node:path";
+import zlib from "node:zlib";
 
 const OUT = path.resolve(process.cwd(), "out");
 
@@ -69,5 +70,24 @@ const PAGES = ["pf", "pt", "ps", "pp", "gs", "rb", "gt", "as", "li"];
 for (const slug of PAGES) assertContains(`work/${slug}/index.html`, "Back to the table", `findings page ${slug}`);
 if (fs.existsSync(path.join(OUT, "work/ar"))) fail("findings: card element ar must not have a page");
 assertContains("work/pf/index.html", "view-transition-name:el-pf", "findings (expand target matches the table cell)");
+
+// Task 10 — motion and performance budget
+{
+  const html = read("index.html");
+  const css = [...new Set([...html.matchAll(/\/_next\/static\/[^"']+\.css/g)].map((m) => m[0]))]
+    .map((p) => fs.readFileSync(path.join(OUT, p), "utf8"))
+    .join("\n");
+  if (!css.includes("prefers-reduced-motion")) fail("motion: home CSS has no prefers-reduced-motion handling");
+  for (const slug of PAGES) {
+    if (/<video[^>]*\sautoplay/i.test(read(`work/${slug}/index.html`))) fail(`motion: work/${slug} autoplays video`);
+  }
+  // Site JS = chunks carrying our own component code (framework chunks excluded).
+  const chunks = [...new Set([...html.matchAll(/\/_next\/static\/chunks\/[^"']+\.js/g)].map((m) => m[0]))];
+  const site = chunks.filter((p) => /spine-ready|pt-toggle|di-head|cell-sym/.test(fs.readFileSync(path.join(OUT, p), "utf8")));
+  const gz = site.reduce((s, p) => s + zlib.gzipSync(fs.readFileSync(path.join(OUT, p))).length, 0);
+  console.log(`check-export: home site JS ${(gz / 1024).toFixed(1)} KB gzipped across ${site.length} chunk(s)`);
+  if (site.length === 0) fail("perf: could not find the site's own JS chunk (markers changed?)");
+  if (gz > 30 * 1024) fail(`perf: home site JS ${(gz / 1024).toFixed(1)} KB gzipped exceeds the 30 KB budget`);
+}
 
 console.log("check-export: all assertions passed");

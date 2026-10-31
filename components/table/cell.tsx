@@ -12,12 +12,13 @@ interface CellProps {
 
 /** One element cell. Links to its findings page when it has one, otherwise a button that pins the panel. */
 export function Cell({ el, colour, active, onActivate, onPin, register }: CellProps) {
-  const label = `${el.name}, element ${el.number}, ${FAMILIES[el.family].label}`;
+  // Starts with the text a sighted user sees on the smallest screens (number, symbol).
+  const label = `${el.number} ${el.symbol} ${el.name}, element ${el.number}, ${FAMILIES[el.family].label}`;
   const body = (
     <>
       <span className="cell-num">{el.number}</span>
-      <span className="cell-year">{el.year}</span>
-      <span className="cell-sym">{el.symbol}</span>
+      <span className="cell-year" aria-hidden="true">{el.year}</span>
+      <span className="cell-sym">{el.symbol}</span>{" "}
       <span className="cell-name">{el.name}</span>
     </>
   );
