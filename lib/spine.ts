@@ -27,3 +27,17 @@ export function snapToVertex(y: number, opts: Partial<SpineGeometry> = {}): { x:
   const vy = Math.round(y / g.step) * g.step;
   return { x: xAt(vy, g), y: vy };
 }
+
+/** Dash offsets per segment (0 = drawn, 1 = hidden) and side-group opacities for a scroll progress. */
+export function spineDraw(
+  progress: number,
+  segs: { top: number; height: number }[],
+  sides: { y: number }[],
+): { offsets: number[]; opacities: number[] } {
+  const total = segs.length ? segs[segs.length - 1].top + segs[segs.length - 1].height : 1;
+  const line = Math.min(1, Math.max(0, progress)) * total;
+  return {
+    offsets: segs.map((s) => 1 - Math.min(1, Math.max(0, (line - s.top) / Math.max(1, s.height)))),
+    opacities: sides.map((s) => (line >= s.y ? 1 : 0.15)),
+  };
+}

@@ -34,17 +34,17 @@
   stroke-linejoin: round;
   stroke-linecap: round;
   stroke-dasharray: 1;
-  transition: stroke-dashoffset 120ms linear;
+}
+.spine-group {
+  transition: opacity 120ms ease-out;
 }
 .spine-side {
   stroke-width: 1.2;
   stroke-dasharray: 2 3;
-  transition: opacity 200ms ease;
 }
 .spine-atom {
   fill: var(--paper);
   stroke-width: 1.6;
-  transition: opacity 200ms ease;
 }
 
 @media (max-width: 480px) {
@@ -65,8 +65,7 @@
     stroke-dashoffset: 0 !important;
     transition: none;
   }
-  .spine-side,
-  .spine-atom {
+  .spine-group {
     opacity: 1 !important;
     transition: none;
   }
