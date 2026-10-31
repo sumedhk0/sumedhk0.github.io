@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
-@theme {
-  --color-bg: #fdfdfc;
-  --color-fg: #1a1a1a;
-  --color-muted: #6b6b6b;
-  --color-link: #1a4fd6;
-  --color-rule: #e4e4e0;
-  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
-    Cambria, "Times New Roman", serif;
+/* Colour tokens mirror lib/theme.ts (tests/theme.test.ts keeps them in sync). */
+:root {
+  --paper: #f5f6f2;
+  --ink: #1c2433;
+  --muted: #5b6676;
+  --rule: #c9d0d6;
+  --blueprint: #2c5aa0;
+  --pencil: #c23b22;
+  --fam-materials: #2f62a8;
+  --fam-safety: #b04a35;
+  --fam-optimization: #2f7d63;
+  --fam-vision: #8a5aa8;
+  --fam-chemistry: #93680f;
+  --fam-software: #5f6872;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #11161d;
+    --ink: #e6e9ee;
+    --muted: #9aa5b4;
+    --rule: #2b3440;
+    --blueprint: #8fb3e8;
+    --pencil: #f08a73;
+    --fam-materials: #4370b8;
+    --fam-safety: #b5513c;
+    --fam-optimization: #2a7d62;
+    --fam-vision: #895daa;
+    --fam-chemistry: #916710;
+    --fam-software: #6c7684;
+    color-scheme: dark;
+  }
+}
+
+/* Expose tokens to Tailwind utilities (bg-paper, text-muted, border-rule, ...). */
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-blueprint: var(--blueprint);
+  --color-pencil: var(--pencil);
+  --font-display: var(--font-newsreader), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-plex-sans), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, Menlo, monospace;
 }
 
 @layer base {
   html {
-    background-color: var(--color-bg);
+    background-color: var(--paper);
   }
 
+  /* Lab-notebook graph paper: 40px major grid over an 8px minor grid. */
   body {
-    background-color: var(--color-bg);
-    color: var(--color-fg);
-    font-family: var(--font-serif);
-    font-size: 18px;
-    line-height: 1.65;
+    background-color: var(--paper);
+    background-image:
+      linear-gradient(color-mix(in srgb, var(--blueprint) 7%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--blueprint) 7%, transparent) 1px, transparent 1px),
+      linear-gradient(color-mix(in srgb, var(--blueprint) 3.5%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--blueprint) 3.5%, transparent) 1px, transparent 1px);
+    background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -28,17 +73,40 @@
   h1,
   h2,
   h3 {
-    font-weight: 600;
-    line-height: 1.2;
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.15;
+    text-wrap: balance;
   }
 
   a {
-    color: var(--color-link);
+    color: var(--blueprint);
     text-decoration: underline;
-    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--blueprint);
+    outline-offset: 2px;
   }
 
   ::selection {
-    background-color: rgba(26, 79, 214, 0.15);
+    background-color: color-mix(in srgb, var(--blueprint) 20%, transparent);
+  }
+}
+
+@layer components {
+  .mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
   }
 }
