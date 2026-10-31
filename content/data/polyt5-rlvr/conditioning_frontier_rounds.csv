@@ -1,0 +1,5 @@
+model,round,pv,slope,tg_at_300_K,tg_at_400_K,tg_at_500_K,tp
+baseline (supervised),0,0.665,0.904,309.6,375.8,490.4,0.738
+composite (kl 0.02),1,0.915,0.268,231.5,252.1,285.2,0.138
+composite_kl05 (kl 0.05),2,0.918,0.295,241.2,257.6,300.2,0.192
+composite_replay05 (replay 0.5),3,0.79,0.973,286.8,322.8,481.4,0.582

@@ -1,0 +1,78 @@
+.chart {
+  width: 100%;
+  height: auto;
+  display: block;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  overflow: visible;
+}
+.chart text {
+  font-size: 11px;
+  fill: var(--muted);
+}
+.chart .chart-label,
+.chart .chart-value {
+  fill: var(--ink);
+}
+.chart .chart-value {
+  font-weight: 500;
+}
+.chart-grid {
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+.chart-axis {
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+.chart-frame {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+.chart-bar {
+  fill: var(--muted);
+  opacity: 0.55;
+}
+.chart-bar.hl {
+  fill: var(--blueprint);
+  opacity: 1;
+}
+.chart-ref {
+  stroke: var(--pencil);
+  stroke-width: 1.4;
+  stroke-dasharray: 4 3;
+}
+.chart .chart-ref-label {
+  fill: var(--pencil);
+}
+.chart-line {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 1.6;
+}
+.chart-line.hl {
+  stroke: var(--blueprint);
+  stroke-width: 2.4;
+}
+.chart-pt {
+  fill: var(--paper);
+  stroke: var(--muted);
+  stroke-width: 1.4;
+}
+.chart-pt.hl {
+  fill: var(--blueprint);
+  stroke: var(--blueprint);
+}
+.chart .chart-oom {
+  fill: var(--pencil);
+  font-weight: 500;
+}
+.chart .chart-series.hl {
+  fill: var(--blueprint);
+  font-weight: 500;
+}
+.chart .chart-axis-label {
+  fill: var(--ink);
+  font-size: 11px;
+}

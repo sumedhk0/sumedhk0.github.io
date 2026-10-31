@@ -1,0 +1,4 @@
+method,xy_error_m_median,population,source
+per-frame homography calibration (independent per frame),6.17,NFL Helmet Assignment play 57583/82,NFLGSPLAT nfl_gsplat/calibration/from_helmets.py:28-30 & :173-174
+fixed-centre shared camera (in-sample players),0.13,same play; players used in calibration,NFLGSPLAT scripts/07c_measure_accuracy.py:26 & :63
+fixed-centre shared camera (held-out players),0.15,same play; half the squad never seen by the solve,NFLGSPLAT scripts/07c_measure_accuracy.py:26 & :63

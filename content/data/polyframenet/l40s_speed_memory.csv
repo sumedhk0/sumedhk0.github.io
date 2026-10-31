@@ -1,0 +1,13 @@
+model,n_atoms,ms_per_step,peak_gpu_GB,status,source
+PolyFrameNet v2,976,22.94,0.248,ok,docs/results/l40s/bench_l40s/speed_v2_r1.json
+PolyFrameNet v2,7808,81.22,3.617,ok,docs/results/l40s/bench_l40s/speed_v2_r2.json
+PolyFrameNet v2,26352,551.19,27.92,ok,docs/results/l40s/bench_l40s/speed_v2_r3.json
+PolyFrameNet v1 (PE-only),976,29.46,0.151,ok,docs/results/l40s/bench_l40s/speed_v1_r1.json
+PolyFrameNet v1 (PE-only),7808,33.78,1.063,ok,docs/results/l40s/bench_l40s/speed_v1_r2.json
+PolyFrameNet v1 (PE-only),26352,67.10,3.502,ok,docs/results/l40s/bench_l40s/speed_v1_r3.json
+MACE,976,58.46,1.576,ok,docs/results/l40s/bench_l40s/speed_mace_r1.json
+MACE,7808,447.77,12.35,ok,docs/results/l40s/bench_l40s/speed_mace_r2.json
+MACE,26352,,41.60,OOM,docs/results/l40s/bench_l40s/speed_mace_r3.json
+Allegro (eager),976,55.81,4.460,ok,docs/results/l40s/bench_l40s/speed_allegro_r1.json
+Allegro (eager),7808,,32.74,OOM,docs/results/l40s/bench_l40s/speed_allegro_r2.json
+Allegro (eager),26352,,18.26,OOM,docs/results/l40s/bench_l40s/speed_allegro_r3.json
