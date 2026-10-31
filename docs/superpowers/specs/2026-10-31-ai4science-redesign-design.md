@@ -1,6 +1,6 @@
 # AI-for-Science Portfolio Redesign: Design
 
-Status: draft for approval · 2026-10-31 · site: https://sumedhk0.github.io (Next.js 16 static export, Tailwind 4, GitHub Pages)
+Status: ready for owner approval (builder check done) · 2026-10-31 · site: https://sumedhk0.github.io (Next.js 16 static export, Tailwind 4, GitHub Pages)
 
 ## 1. Intent
 
@@ -90,7 +90,35 @@ A reader should be able to get from the home page into the actual evidence of ea
 | 17 | Rf | ResumeForge (merge with ResumeOptimizer) | Software | Card only |
 | 18 | Ga | GitHub Analyzer | Software | Card only |
 
-- Atomic numbers follow the date order; the builder assigns final numbers from the dates in `data/`. Cell placement in the 2/8/8 shape is the builder's call. Keep families visually clustered where possible.
+- **Dates and numbering:**
+  - **Rule:** atomic number = order of start date, **oldest = 1**. New work joins at the end and existing numbers never change, which matches how real elements were added. This replaces the mockup's "newest = 1" (Claude's call).
+  - **Date source precedence:** (1) the October 2026 resume; (2) `data/experience.ts` periods; (3) the event date for hackathons; (4) the repo creation month for software projects.
+  - Add a `start` field (YYYY-MM) to each element record. The cell shows its year.
+  - Settled dates:
+
+    | Element | Start | Source |
+    |---|---|---|
+    | MOFs | 2024-08 | experience |
+    | Lignin | 2025-08 | experience |
+    | ChemE Cube | 2025-08 | resume |
+    | Arbitrage | 2025-11 | repo |
+    | GitHub Analyzer | 2025-12 | repo |
+    | ResumeForge | 2025-12 | ResumeOptimizer repo |
+    | Panoptic Pigskin | 2026-02 | resume "Spring 2026"; first NFL repo 2026-04 |
+    | HyTech | 2026-02 | experience |
+    | EcoFlow | 2026-02 | repo |
+    | GameSense | 2026-03 | Tech(HACK) Valley, Mar 6–8 |
+    | PSO | 2026-03 | resume "Spring 2026" |
+    | GT Transfer | 2026-04 | repo |
+    | Robotech | 2026 | builder takes the month from the Devpost submission date |
+    | Adversarial self-play | 2026-05 | resume |
+    | LiLAC | 2026-05 | resume |
+    | PolyT5-RLVR | 2026-08 | resume "Summer 2026"; repo 2026-08 |
+    | PolyFrameNet | 2026-08 | resume |
+    | PolyDYN | 2026-08 | Ramprasad start |
+
+    Ties break alphabetically.
+- Cell placement in the 2/8/8 shape is the builder's call. Keep families visually clustered where possible.
 - Items left off the table are the PFAS review, GreenGrade, eutrophication modelling, crop predictor, AiApply and PolyUMA. They remain in the research and project lists below the table.
 - AiApply is left off because its live link is dead. PolyUMA is dropped entirely because its repo is empty.
 
@@ -109,10 +137,13 @@ A reader should be able to get from the home page into the actual evidence of ea
    - **About:** a short paragraph, focus areas and skills.
    - **Experience:** a list with the spine.
    - **Research:** a list with the spine, with each entry linking to its element.
+   - **Projects:** a list with the spine. It holds every project, including those not on the table (crop predictor, AiApply, GreenGrade, etc.), and each entry that is an element links to it.
    - **Education:** with the spine.
    - **Contact.**
 
-   A sticky **drawing index** navigates sections. On desktop it's a left rail styled as a drawing index (`01 Work`, `02 About`, `03 Experience`, `04 Research`, `05 Education`, `06 Contact`). On phones it becomes a horizontal strip.
+   These lists are also the no-JS and keyboard path to every card-only element's content, so hover panels are never the only way to reach it.
+
+   A sticky **drawing index** navigates sections. On desktop it's a left rail styled as a drawing index (`01 Work`, `02 About`, `03 Experience`, `04 Research`, `05 Projects`, `06 Education`, `07 Contact`). On phones it becomes a horizontal strip.
 2. **`/work/<slug>/`**: one statically generated findings page per "Full" or "Restricted" element (`generateStaticParams`). Template:
    - **Header:** the element cell (large), title, dates, affiliation, links (repo, live, Devpost, video), and family and tech as mono tags.
    - **Lead paragraph (2–3 sentences):** problem, idea and headline result, benefit-first.
@@ -199,6 +230,11 @@ A reader should be able to get from the home page into the actual evidence of ea
 - **Accessibility:** WCAG AA contrast in both themes, visible focus, the table operable by keyboard and labelled for screen readers ("PolyFrameNet, element 1, ML for materials"), and alt text and captions on every figure.
 - **Existing content and OG image:** `app/opengraph-image.tsx` stays force-static. Update its look to match, optionally a periodic cell.
 - **Commits:** frequent, with messages that explain the reasoning. No attribution trailers, per the owner's CLAUDE.md.
+- **Rollout:**
+  - Every push to `main` deploys the live site, so build on a feature branch (`redesign/ai4science`) and push that branch freely.
+  - The live site switches over in one merge.
+  - The owner's CLAUDE.md requires asking before a merge. At that point the owner reviews the built site, including all new copy (hero thesis, panel one-liners, lead paragraphs, figure captions, limits sentences), via screenshots or a local or preview build.
+  - Small content fixes to `data/` may still go to `main` meanwhile. Rebase the branch onto it.
 - **Optional later idea:** a small static periodic-cell or block-chain illustration in the OG image. No WebGL crystal for now.
 
 ## 11. Left to the builder
@@ -217,3 +253,6 @@ A reader should be able to get from the home page into the actual evidence of ea
 - An **18-element roster**: what's on the table, what's card-only, and that PolyUMA and AiApply are off the table.
 - **Type and palette** are taken from mockup A, with mockup C's family colours.
 - Charts are **re-plotted** in site style rather than embedding repo PNGs, except the PolyFrameNet `architecture.png` and photos.
+- **Numbering is oldest = 1**, so numbers stay stable as work is added. The date table in §4.2 settles each element's start date from the resume first.
+- A **Projects list** stays on the home page with the spine. It is also the accessible path to card-only content.
+- The redesign is built on a **branch** and goes live in one approved merge. The owner reviews all new copy at that merge.
