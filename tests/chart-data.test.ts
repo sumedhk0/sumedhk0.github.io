@@ -58,3 +58,24 @@ describe("ML-assisted PSO charts", () => {
     expect(row(rows, "Sphere")).toBe(95.6);
   });
 });
+
+describe("Panoptic Pigskin charts", () => {
+  test("pp-calibration: 6.17 m per-frame vs 0.15 m held-out (41x)", () => {
+    const r = D.ppCalibration();
+    expect(row(r, "Per-frame calibration")).toBe(6.17);
+    expect(row(r, "Shared camera, held-out players")).toBe(0.15);
+    expect(Math.round((6.17 / 0.15) * 10) / 10).toBe(41.1);
+  });
+  test("pp-surges: implausible motion 17.3% -> 5.5% of body-frames", () => {
+    const r = D.ppSurges();
+    expect(r[0].value).toBe(17.3);
+    expect(r[1].value).toBe(5.5);
+  });
+  test("pp-pck: endzone 0.7 -> 66.1, sideline 50.7 -> 87.5 (cross-camera labels)", () => {
+    const r = D.ppPck();
+    expect(row(r, "Endzone, before")).toBe(0.7);
+    expect(row(r, "Endzone, self-trained")).toBe(66.1);
+    expect(row(r, "Sideline, before")).toBe(50.7);
+    expect(row(r, "Sideline, self-trained")).toBe(87.5);
+  });
+});

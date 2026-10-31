@@ -60,3 +60,29 @@ describe("view transition CSS", () => {
     expect(block).toContain("animation: none");
   });
 });
+
+describe("Task 9 pages", () => {
+  test("GT Transfer stats are the audited counts", () => {
+    const v = (getFindings("gt")!.stats ?? []).map((s) => s.value);
+    expect(v).toEqual(["2,076", "104,073", "1,461"]);
+  });
+  test("Panoptic Pigskin calibration caption names the Helmet-Assignment play", () => {
+    const fig = getFindings("pp")!.figures.find((f) => f.kind === "chart" && f.chartId === "pp-calibration")!;
+    expect(fig.caption).toMatch(/Helmet Assignment/);
+  });
+  test("GameSense never claims Kalman filtering", () => {
+    expect(JSON.stringify(getFindings("gs"))).not.toMatch(/Kalman/i);
+  });
+  test("Robotech's 95% is the team-reported detection-and-removal rate", () => {
+    const s = JSON.stringify(getFindings("rb"));
+    if (s.includes("95%")) expect(s).toMatch(/detection-and-removal rate/);
+  });
+  test("each findings page's media totals at most 8 MB", () => {
+    for (const slug of findingsSlugs()) {
+      const bytes = getFindings(slug)!
+        .figures.flatMap((f) => (f.kind === "image" ? [f.src] : f.kind === "video" ? [f.src, f.poster] : []))
+        .reduce((sum, src) => sum + fs.statSync(path.join(PUBLIC, src)).size, 0);
+      expect(bytes, slug).toBeLessThanOrEqual(8 * 1024 * 1024);
+    }
+  });
+});

@@ -116,3 +116,33 @@ export function psMlGain(): { rows: Row[]; min: number; max: number } {
     max: Math.max(...pct),
   };
 }
+
+// ---- Panoptic Pigskin ----
+export function ppCalibration(): Row[] {
+  const rows = readCsv("panoptic-pigskin/calibration_vs_tracking.csv");
+  const pick = (prefix: string) => n(rows.find((r) => r.method.startsWith(prefix))!.xy_error_m_median);
+  return [
+    { label: "Per-frame calibration", value: pick("per-frame") },
+    { label: "Shared camera, held-out players", value: pick("fixed-centre shared camera (held-out"), highlight: true },
+  ];
+}
+
+export function ppSurges(): Row[] {
+  const rows = readCsv("panoptic-pigskin/surges_before_after.csv");
+  const share = (prefix: string) => n(rows.find((r) => r.version.startsWith(prefix))!.surge_share_pct);
+  return [
+    { label: "9-frame smoothing", value: share("v115") },
+    { label: "Depth-axis smoothing", value: share("v117a"), highlight: true },
+  ];
+}
+
+export function ppPck(): Row[] {
+  const rows = readCsv("panoptic-pigskin/pose_finetune_pck.csv").filter((r) => r.label_source === "fit_cross");
+  return rows.flatMap((r) => {
+    const cam = r.camera[0].toUpperCase() + r.camera.slice(1);
+    return [
+      { label: `${cam}, before`, value: n(r.pck10_pretrained_pct) },
+      { label: `${cam}, self-trained`, value: n(r.pck10_ft2_pct), highlight: true },
+    ];
+  });
+}

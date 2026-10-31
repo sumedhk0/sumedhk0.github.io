@@ -80,6 +80,34 @@ const PsMlGain = () => (
   />
 );
 
+
+const PpCalibration = () => (
+  <BarChart
+    rows={D.ppCalibration()}
+    unit=" m"
+    log
+    ariaLabel="Median player position error against official NFL tracking: 6.17 metres with independent per-frame calibration, 0.15 metres for held-out players with the shared-camera solve."
+  />
+);
+
+const PpSurges = () => (
+  <BarChart
+    rows={D.ppSurges()}
+    unit="%"
+    max={20}
+    ariaLabel="Share of body-frames with physically implausible acceleration: 17.3 percent with plain 9-frame smoothing, 5.5 percent after smoothing along each camera's depth axis."
+  />
+);
+
+const PpPck = () => (
+  <BarChart
+    rows={D.ppPck()}
+    unit="%"
+    max={100}
+    ariaLabel="Keypoints within 10 pixels on held-out cross-camera labels: endzone 0.7 percent before and 66.1 after self-training; sideline 50.7 before and 87.5 after."
+  />
+);
+
 export const CHARTS: Partial<Record<ChartId, () => React.JSX.Element>> = {
   "pf-speed": PfSpeed,
   "pf-memory": PfMemory,
@@ -89,4 +117,7 @@ export const CHARTS: Partial<Record<ChartId, () => React.JSX.Element>> = {
   "pt-scaling": PtScaling,
   "ps-objective": PsObjective,
   "ps-ml-gain": PsMlGain,
+  "pp-calibration": PpCalibration,
+  "pp-surges": PpSurges,
+  "pp-pck": PpPck,
 };
