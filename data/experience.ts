@@ -10,6 +10,7 @@ export const experiences: Experience[] = [
       "PolyFrameNet: built a polymer MLIP that enforces exact O(3) and permutation symmetry with plain MLPs, avoiding costly equivariant tensor products, by splitting chains into graph-defined rigid blocks with local frames and Weisfeiler–Lehman frame averaging",
       "Achieved 2.5–5.5× faster inference and 3.4–6.4× less GPU memory than MACE at an equal training budget (90 min, one L40S) on 876K-atom OPoly26, and scaled to 26K-atom polymer melts where both MACE and Allegro run out of memory",
       "Open-sourced PyTorch/ASE code and weights with an 81-test correctness suite and a registry flagging unseen chemical blocks",
+      "Won the 2026 Open Scientific Intelligence (OSI) Hackathon with PolyFrameNet, taking the MDRI Frontier award ($2,000 top prize)",
       "PolyDYN: building a multi-agent LLM framework for autonomous polymer design with MLIP-driven property screening",
     ],
   },

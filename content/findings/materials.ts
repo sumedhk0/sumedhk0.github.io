@@ -7,7 +7,7 @@ export const pf: Findings = {
   slug: "pf",
   dates: "August 2026 – present",
   affiliation: "Ramprasad Laboratory · Georgia Tech",
-  lead: "Polymer simulations need machine-learned potentials that stay fast at tens of thousands of atoms. PolyFrameNet splits each chain into rigid blocks with their own coordinate frames, so plain MLPs replace costly equivariant tensor products while symmetry stays exact. At an equal training budget it runs 2.5–5.5× faster than MACE with 3.4–6.4× less GPU memory, and it simulates 26K-atom polymer melts where MACE and Allegro run out of memory.",
+  lead: "Polymer simulations need machine-learned potentials that stay fast at tens of thousands of atoms. PolyFrameNet splits each chain into rigid blocks with their own coordinate frames, so plain MLPs replace costly equivariant tensor products while symmetry stays exact. At an equal training budget it runs 2.5–5.5× faster than MACE with 3.4–6.4× less GPU memory, and it simulates 26K-atom polymer melts where MACE and Allegro run out of memory. It won the 2026 Open Scientific Intelligence (OSI) Hackathon, October 21–22, 2026, where the entry (team Frame Job) took the MDRI Frontier award, the $2,000 top prize.",
   figures: [
     {
       kind: "image",

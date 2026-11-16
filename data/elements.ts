@@ -7,7 +7,7 @@ import { ElementRecord } from "@/lib/types";
 export const ELEMENTS: ElementRecord[] = [
   {
     slug: "pf", symbol: "Pf", name: "PolyFrameNet", family: "materials", start: "2026-08", kind: "full",
-    oneLiner: "2.5–5.5× faster than MACE; scales to 26K-atom melts",
+    oneLiner: "OSI Hackathon 2026 winner; 2.5–5.5× faster than MACE",
     tech: ["MLIP", "Frame averaging", "PyTorch", "ASE"],
     links: [{ label: "GitHub", href: "https://github.com/sumedhk0/PolyFrameNet" }],
   },

@@ -13,6 +13,7 @@ export const education: Education = {
     "Quantum Mechanics I",
   ],
   honors: [
+    "MDRI Frontier Award ($2,000 top prize), 2026 Open Scientific Intelligence Hackathon",
     "PACESHIP Scholar",
     "TechHack Valley 2026 Hackathon Winner",
     "Symposium of Rising Scholars Presenter",
