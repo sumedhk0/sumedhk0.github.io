@@ -100,8 +100,10 @@ describe("final review fixes", () => {
     expect(href("gs")).toContain("https://www.youtube.com/watch?v=MPyTruaT-h8");
     expect(href("rb")).toContain("https://www.youtube.com/watch?v=cWmjeuB-yqk");
   });
-  test("PolyT5 lead scopes the 79% to the validity arm", () => {
-    expect(getFindings("pt")!.lead).toMatch(/up to 79%/);
+  test("PolyT5 lead states the final model's gains in points", () => {
+    const lead = getFindings("pt")!.lead;
+    expect(lead).toMatch(/validity by 13\.5 points, synthesizability by 11\.5 and novelty by 17\.4/);
+    expect(lead).not.toMatch(/79%/);
   });
   test("PolyFrameNet speed caption does not imply Allegro had the same L40S budget", () => {
     const fig = getFindings("pf")!.figures.find((f) => f.kind === "chart" && f.chartId === "pf-speed")!;

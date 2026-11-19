@@ -47,7 +47,7 @@ export const pf: Findings = {
 export const pt: Findings = {
   slug: "pt",
   dates: "August – September 2026",
-  lead: "I rebuilt the Ramprasad Lab's PolyT5 from scratch, a 7.46M-parameter T5 pretrained on 92.3M polymers, and matched the paper's accuracy band (Tg RMSE 44.45 vs 40.82 K). Post-training it with GRPO against chemistry-verifiable rewards cut invalid polymer generations by up to 79%, and supervised replay then restored 99% of the target-Tg control that the rewards had erased. A regression head cut Tg prediction error 5.2%.",
+  lead: "I rebuilt the Ramprasad Lab's PolyT5 from scratch, a 7.46M-parameter T5 pretrained on 92.3M polymers, and matched the paper's accuracy band (Tg RMSE 44.45 vs 40.82 K). Post-training it with GRPO against chemistry-verifiable rewards raised validity by 13.5 points, synthesizability by 11.5 and novelty by 17.4, and supervised replay restored 99% of the target-Tg control that the rewards had erased. A regression head cut Tg prediction error 5.2%.",
   figures: [
     {
       kind: "chart",

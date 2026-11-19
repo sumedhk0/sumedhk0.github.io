@@ -5,7 +5,7 @@ export const projects: Project[] = [
     id: "polyt5-rlvr",
     title: "PolyT5-RLVR — Polymer Encoder-Decoder Model",
     description:
-      "Reproduced the Ramprasad Lab's PolyT5 from scratch (a 7.46M-parameter T5 encoder-decoder pretrained on 92.3M polymers) within the paper's accuracy band, then post-trained it with GRPO against chemistry-verifiable rewards, cutting chemically invalid generations by 79%. Found that the chemistry rewards erased target-Tg control and restored 99% of it with supervised replay while keeping a 12.5-point validity gain. Replaced text decoding with a regression head, cutting Tg error 5.2% (28.60 → 27.11 K) and eliminating catastrophic decode failures on all 10 split–seed pairs of a 70-run ablation, and added split-conformal intervals (±54.35 K at 90% coverage).",
+      "Reproduced the Ramprasad Lab's PolyT5 from scratch (a 7.46M-parameter T5 encoder-decoder pretrained on 92.3M polymers) within the paper's accuracy band, then post-trained it with GRPO against chemistry-verifiable rewards, raising validity by 13.5 points, synthesizability by 11.5 and novelty by 17.4. Found that the chemistry rewards erased target-Tg control and restored 99% of it with supervised replay while keeping the 13.5-point validity gain. Replaced text decoding with a regression head, cutting Tg error 5.2% (28.60 → 27.11 K) and eliminating catastrophic decode failures on all 10 split–seed pairs of a 70-run ablation, and added split-conformal intervals (±54.35 K at 90% coverage).",
     tech: ["Python", "PyTorch", "T5", "GRPO", "RLVR", "Conformal Prediction"],
     category: "Research",
     github: "https://github.com/sumedhk0/POLYT5-RLVR",

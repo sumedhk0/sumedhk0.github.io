@@ -19,7 +19,7 @@ export const ELEMENTS: ElementRecord[] = [
   },
   {
     slug: "pt", symbol: "Pt", name: "PolyT5-RLVR", family: "materials", start: "2026-08", kind: "full",
-    oneLiner: "−79% invalid polymers; 99% of Tg control restored",
+    oneLiner: "+13.5 pts validity, +17.4 novelty; 99% of Tg control restored",
     tech: ["T5", "GRPO", "RLVR", "Conformal prediction"],
     links: [{ label: "GitHub", href: "https://github.com/sumedhk0/POLYT5-RLVR" }],
   },
